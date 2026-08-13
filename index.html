@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- YouTube's embedded player (since late 2025) rejects requests with no
+       Referer header, failing with "Error 153: Video player configuration
+       error." This referrer policy sends a valid origin so embeds initialize.
+       Note: this only works when the page is served over http(s); from file://
+       there is no origin to send and 153 will still occur. -->
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Channel 27 — The channel that never went off the air</title>
+  <meta name="description" content="A television station from an alternate timeline. It's already on. You just tuned in.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=VT323&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <main id="tv" aria-label="Channel 27 cable broadcast">
+    <div id="screen" data-mode="content">
+      <!-- the signal -->
+      <canvas id="signal" aria-hidden="true"></canvas>
+
+      <!-- show / commercial / bumper overlays -->
+      <div id="overlay" aria-hidden="true"></div>
+
+      <!-- closed-caption style scene line -->
+      <div id="caption" role="status" aria-live="polite"></div>
+
+      <!-- standby + caption notices -->
+      <div id="signal-note" aria-hidden="true">SIGNAL UNAVAILABLE<span>Original Channel 27 presentation continues.</span></div>
+      <div id="cc-note" aria-hidden="true">CC unavailable for this footage</div>
+
+      <!-- broadcast furniture -->
+      <div id="rating-bug" aria-hidden="true"></div>
+      <div id="channel-bug" aria-hidden="true"></div>
+      <div id="osd" aria-hidden="true"></div>
+
+      <!-- CRT dressing -->
+      <canvas id="staticfx" aria-hidden="true"></canvas>
+      <div id="scanlines" aria-hidden="true"></div>
+      <div id="vignette" aria-hidden="true"></div>
+    </div>
+
+    <!-- lower info bar -->
+    <div id="infobar">
+      <div id="info-now"></div>
+      <div id="info-remain"></div>
+      <div id="info-next"></div>
+      <div id="clock" aria-label="Current time"></div>
+      <button id="ch-up" title="Channel up (Arrow Up)" aria-label="Channel up">CH +</button>
+      <button id="ch-down" title="Channel down (Arrow Down)" aria-label="Channel down">CH −</button>
+      <button id="sound-btn" aria-pressed="false" title="Toggle sound (M)">SOUND OFF</button>
+      <button id="cc-btn" aria-pressed="true" title="Toggle captions (C)">CC</button>
+      <button id="fs-btn" title="Fullscreen (F)" aria-label="Toggle fullscreen">⛶</button>
+      <button id="guide-btn" aria-haspopup="dialog">GUIDE</button>
+    </div>
+  </main>
+
+  <!-- screen-reader channel announcements -->
+  <div id="announcer" class="visually-hidden" aria-live="polite"></div>
+
+  <!-- TV Guide -->
+  <div id="guide" hidden role="dialog" aria-modal="true" aria-label="TV Guide">
+    <div id="guide-panel">
+      <header id="guide-head">
+        <div id="guide-logo">CABLE <span>GUIDE</span></div>
+        <div id="guide-tabs" role="tablist" aria-label="Guide views">
+          <button id="gtab-now" role="tab" aria-selected="true">ON NOW</button>
+          <button id="gtab-list" role="tab" aria-selected="false">LISTINGS</button>
+        </div>
+        <div id="guide-clock"></div>
+        <button id="guide-close" aria-label="Close guide">✕</button>
+      </header>
+      <div id="guide-list"></div>
+      <footer id="guide-foot">
+        <span>Schedule repeats weekly · G guide · ↑↓ channels · C captions · F fullscreen</span>
+        <span id="guide-prefs">
+          <label><input type="checkbox" id="pref-crt"> CRT effects</label>
+          <label><input type="checkbox" id="pref-calm"> Reduce flashing</label>
+        </span>
+      </footer>
+    </div>
+  </div>
+
+  <noscript>
+    <div style="color:#eee;font-family:monospace;padding:2rem;text-align:center">
+      Channel 27 requires JavaScript. Please stand by.
+    </div>
+  </noscript>
+
+  <!-- content library (content is data — edit these, not the engine) -->
+  <script src="content/channels.js"></script>
+  <script src="content/shows.js"></script>
+  <script src="content/commercials.js"></script>
+  <script src="content/bumpers.js"></script>
+  <script src="content/media.js"></script>
+  <script src="content/schedules/channel27.js"></script>
+  <script src="content/schedules/channel28.js"></script>
+  <script src="content/schedules/channel29.js"></script>
+  <script src="content/schedules/channel30.js"></script>
+  <script src="content/schedules/channel31.js"></script>
+  <!-- engine -->
+  <script src="js/scheduler.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/video.js"></script>
+  <script src="js/youtube.js"></script>
+  <script src="js/ambient.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

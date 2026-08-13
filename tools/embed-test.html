@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Required so YouTube receives a valid referrer; without it embeds fail
+     with "Error 153: Video player configuration error". Only effective when
+     this page is SERVED over http(s) — see the banner below. -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Channel 27 — Embed Test</title>
+<style>
+  :root { --bg:#0c0d16; --card:#161826; --line:#2a2d40; --ink:#e8e9f0; --dim:#9aa0b8; --gold:#f4c542; --ok:#57c98a; --bad:#e8646b; --warn:#e8a33a; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  header { padding:1.4rem 1.2rem 0.6rem; max-width:1100px; margin:0 auto; }
+  h1 { font-size:1.4rem; margin:0 0 .3rem; }
+  h1 span { color:var(--gold); }
+  .lede { color:var(--dim); max-width:72ch; }
+  .banner { max-width:1100px; margin:.6rem auto; padding:.8rem 1rem; border-radius:10px; border:1px solid var(--warn); background:rgba(232,163,58,.1); color:#f3d9a8; }
+  .banner b { color:var(--warn); }
+  #origin { max-width:1100px; margin:0 auto .6rem; padding:0 1.2rem; font-size:.9rem; }
+  #origin code { background:#0c0d16; padding:.05em .4em; border-radius:4px; }
+  .how { max-width:1100px; margin:.4rem auto 1.2rem; padding:0 1.2rem; }
+  .how details { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:.7rem 1rem; }
+  .how summary { cursor:pointer; font-weight:600; }
+  .how li { margin:.3rem 0; color:var(--dim); }
+  .how code { background:#0c0d16; padding:.05em .35em; border-radius:4px; color:var(--gold); font-size:.9em; }
+  .grid { max-width:1100px; margin:0 auto; padding:0 1.2rem 3rem; display:grid; gap:1.2rem; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; }
+  .frame { position:relative; aspect-ratio:16/9; background:#000; }
+  .frame iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .meta { padding:.8rem 1rem 1rem; }
+  .prog { font-weight:700; }
+  .ep { color:var(--dim); font-size:.9rem; margin:.15rem 0 .5rem; }
+  .row { display:flex; align-items:center; justify-content:space-between; gap:.6rem; font-size:.85rem; }
+  .vid { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; color:var(--dim); }
+  a.watch { color:var(--gold); text-decoration:none; white-space:nowrap; }
+  a.watch:hover { text-decoration:underline; }
+  .verdict { margin-top:.7rem; display:flex; gap:.4rem; }
+  .verdict button { flex:1; padding:.4rem; border:1px solid var(--line); background:#10121e; color:var(--dim); border-radius:7px; cursor:pointer; font:inherit; font-size:.85rem; }
+  .verdict button.pass.sel { border-color:var(--ok); color:var(--ok); background:rgba(87,201,138,.1); }
+  .verdict button.fail.sel { border-color:var(--bad); color:var(--bad); background:rgba(232,100,107,.1); }
+  #summary { max-width:1100px; margin:0 auto 2rem; padding:0 1.2rem; color:var(--dim); }
+  #summary code { color:var(--ok); }
+</style>
+</head>
+<body>
+<header>
+  <h1>CHANNEL <span>27</span> — Embed Test</h1>
+  <p class="lede">Each tile embeds a candidate YouTube video the way the site would. If it plays, it embeds — set that record to <code style="color:var(--gold)">active: true</code>. If it shows "Video unavailable / Watch on YouTube," the owner blocked embedding — leave it inactive and the procedural cartoon covers it.</p>
+</header>
+
+<div class="banner">
+  <b>⚠ Serve this page over http(s) — do not open it from <code>file://</code>.</b>
+  A file:// page sends no origin, so YouTube rejects every embed with
+  <b>Error 153 (video player configuration error)</b> — which looks like the videos are
+  blocked when they aren't. Run <code>python -m http.server</code> in the project root and
+  open <code>http://localhost:8000/tools/embed-test.html</code>, or view this on your
+  GitHub Pages deploy. If you see 153 on <i>every</i> tile, that's the origin, not the videos.
+</div>
+<div id="origin"></div>
+
+<div class="how">
+  <details open>
+    <summary>How to read the results</summary>
+    <ul>
+      <li><strong>Plays / shows a play button</strong> &rarr; embeddable. Mark Pass.</li>
+      <li><strong>"Video unavailable" / "Watch on YouTube"</strong> &rarr; the owner disabled embedding for that specific video. Mark Fail; leave <code>active: false</code>.</li>
+      <li><strong>"Error 153" on every tile</strong> &rarr; you're on file:// or a referrer-stripping context. Not a verdict on the videos &mdash; serve the page and reload.</li>
+      <li><strong>Confirm it's the right clip</strong> &mdash; a valid ID pointing at the wrong video is still wrong.</li>
+      <li>When done, flip only the winners to <code>active: true</code> in <code>content/media.js</code>.</li>
+      <li>Reusable for other channels: edit the <code>VIDEOS</code> array at the bottom of this file.</li>
+    </ul>
+  </details>
+</div>
+
+<div class="grid" id="grid"></div>
+<div id="summary"></div>
+
+<script>
+  // Edit this list to test other channels. id = the YouTube video id.
+  const VIDEOS = [
+    { record: "orange-double-dare-classic",          program: "Saturday Mess",   title: "Double Dare OFFICIAL Classic Full Episode", id: "XEZCY95JliY" },
+    { record: "orange-rugrats-imaginary-adventures", program: "Early Toons",     title: "Rugrats Imaginary Adventures & Play Time",  id: "ky9HCmmxc00" },
+    { record: "orange-rugrats-find-reptar",          program: "Lunchbox Toons",  title: "Rugrats Fight a Robot & Find Reptar",       id: "ifvSjE1I5pE" },
+    { record: "orange-rugrats-babies-drive",         program: "Lunchbox Toons",  title: "Rugrats Babies Drive Cars",                 id: "uYMw4bCvY8I" },
+    { record: "orange-rugrats-outer-space",          program: "Prime Pop",       title: "Tommy Finds Reptar In Outer Space",         id: "WrKvjYarIX8" },
+    { record: "orange-rugrats-pet-rescues",          program: "Sunday Couch",    title: "Rugrats Best Pet Rescues",                  id: "SE5k0bGxd-Y" }
+  ];
+
+  // Warn right in the page if opened from file://
+  (function () {
+    const o = document.getElementById("origin");
+    if (!/^https?:$/.test(location.protocol)) {
+      o.innerHTML = 'Current origin: <code style="color:var(--bad)">' + location.protocol + '//</code> &mdash; not http(s). Expect Error 153 on every tile until you serve the page.';
+    } else {
+      o.innerHTML = 'Current origin: <code style="color:var(--ok)">' + location.origin + '</code> &mdash; good, results below are real.';
+    }
+  })();
+
+  const results = {};
+  const grid = document.getElementById("grid");
+
+  VIDEOS.forEach(function (v) {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML =
+      '<div class="frame">' +
+        '<iframe src="https://www.youtube-nocookie.com/embed/' + v.id + '?rel=0&modestbranding=1" ' +
+                'title="' + v.program + '" allowfullscreen ' +
+                'referrerpolicy="strict-origin-when-cross-origin" ' +
+                'allow="accelerometer; encrypted-media; picture-in-picture"></iframe>' +
+      '</div>' +
+      '<div class="meta">' +
+        '<div class="prog">' + v.program + '</div>' +
+        '<div class="ep">' + v.title + '</div>' +
+        '<div class="row">' +
+          '<span class="vid">' + v.id + '</span>' +
+          '<a class="watch" href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener">Open on YouTube &#8599;</a>' +
+        '</div>' +
+        '<div class="verdict">' +
+          '<button class="pass" data-r="' + v.record + '" data-v="pass">&#10003; Embeds</button>' +
+          '<button class="fail" data-r="' + v.record + '" data-v="fail">&#10007; Blocked</button>' +
+        '</div>' +
+      '</div>';
+    grid.appendChild(card);
+  });
+
+  grid.addEventListener("click", function (e) {
+    const btn = e.target.closest("button");
+    if (!btn) return;
+    results[btn.dataset.r] = btn.dataset.v;
+    const card = btn.closest(".card");
+    card.querySelectorAll(".verdict button").forEach(function (b) {
+      b.classList.toggle("sel", b.dataset.v === btn.dataset.v);
+    });
+    renderSummary();
+  });
+
+  function renderSummary() {
+    const pass = Object.entries(results).filter(function (e) { return e[1] === "pass"; }).map(function (e) { return e[0]; });
+    const fail = Object.entries(results).filter(function (e) { return e[1] === "fail"; }).map(function (e) { return e[0]; });
+    const s = document.getElementById("summary");
+    s.innerHTML =
+      '<p><strong>Set these to <code>active: true</code>:</strong> ' +
+      (pass.length ? pass.join(", ") : "(none marked yet)") + '</p>' +
+      (fail.length ? '<p><strong>Leave inactive:</strong> ' + fail.join(", ") + '</p>' : "");
+  }
+</script>
+</body>
+</html>

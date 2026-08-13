@@ -1,0 +1,14 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# editor / tooling
+node_modules/
+*.log
+.vscode/
+
+# local contributed footage — keep large binaries out of the repo
+media/*.mp4
+media/*.webm
+media/*.mov
+media/*.m4v
