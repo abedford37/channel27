@@ -92,7 +92,7 @@
     // file:// origin is "null" and playback fails with Error 153 regardless.
     const httpOrigin = /^https?:$/.test(location.protocol) ? location.origin : undefined;
     const playerVars = {
-      autoplay: 1, controls: 0, disablekb: 1, fs: 0, rel: 0,
+      autoplay: 1, mute: 1, controls: 0, disablekb: 1, fs: 0, rel: 0,
       iv_load_policy: 3, playsinline: 1, modestbranding: 1,
       start, cc_load_policy: captionsPref ? 1 : 0
     };

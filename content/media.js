@@ -155,7 +155,7 @@ window.C27.MEDIA = [
     sourceChannel: "Nickelodeon",
     sourceType: "official",
     channels: ["orange-28"],
-    active: false,
+    active: true,
     fallbackStyle: "game",
     historicalYear: 2002,
     notes: "Official Nickelodeon upload; ID existence-confirmed via web search Aug 2026. Embeddability still requires local iframe test (full episodes are often embed-disabled by the network)."
@@ -172,7 +172,7 @@ window.C27.MEDIA = [
     sourceChannel: "Nick Jr.",
     sourceType: "official",
     channels: ["orange-28"],
-    active: false,
+    active: true,
     fallbackStyle: "toon",
     historicalYear: 2002,
     notes: "Located from Nick Jr. Full URL: https://www.youtube.com/watch?v=ky9HCmmxc00 . Source appears official; iframe availability and captions require local verification."
@@ -189,7 +189,7 @@ window.C27.MEDIA = [
     sourceChannel: "Nick Jr.",
     sourceType: "official",
     channels: ["orange-28"],
-    active: false,
+    active: true,
     fallbackStyle: "toon",
     historicalYear: 2002,
     notes: "Located from Nick Jr. Full URL: https://www.youtube.com/watch?v=ifvSjE1I5pE . Source appears official; iframe availability and captions require local verification."
@@ -206,7 +206,7 @@ window.C27.MEDIA = [
     sourceChannel: "Nick Jr.",
     sourceType: "official",
     channels: ["orange-28"],
-    active: false,
+    active: true,
     fallbackStyle: "toon",
     historicalYear: 2002,
     notes: "Located from Nick Jr. Full URL: https://www.youtube.com/watch?v=uYMw4bCvY8I . Source appears official; iframe availability and captions require local verification."
@@ -223,7 +223,7 @@ window.C27.MEDIA = [
     sourceChannel: "Nick Jr.",
     sourceType: "official",
     channels: ["orange-28"],
-    active: false,
+    active: true,
     fallbackStyle: "toon",
     historicalYear: 2002,
     notes: "Located from Nick Jr. Full URL: https://www.youtube.com/watch?v=WrKvjYarIX8 . Source appears official; iframe availability and captions require local verification."
@@ -240,7 +240,7 @@ window.C27.MEDIA = [
     sourceChannel: "Nick Jr.",
     sourceType: "official",
     channels: ["orange-28"],
-    active: false,
+    active: true,
     fallbackStyle: "toon",
     historicalYear: 2002,
     notes: "Located from Nick Jr. Full URL: https://www.youtube.com/watch?v=SE5k0bGxd-Y . Source appears official; iframe availability and captions require local verification."
