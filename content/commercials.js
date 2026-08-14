@@ -364,5 +364,190 @@ window.C27.COMMERCIALS = [
       "THE CHANNEL 27 GIFT SHOP. Take the channel home."
     ],
     fine: "The vending machine's hum is not for sale. It has been offered. It declines."
-  }
+  },
+  // ---------- Real era-authentic commercials (curated, all media inactive pending embed test) ----------
+  // Generic product labels render on screen; the real ad is named only in notes.
+  // Embedded from established archive channels; uploaders are not rights-holders,
+  // so each media.active stays false until embed-tested. If an embed fails, the
+  // written `lines` play as an original procedural ad instead. Never eligible on 27.
+  {
+    id: "ad-bop-it-extreme-1999", kind: "toy", product: "RHYTHM REACTION GAME",
+    tagline: "Catch the beat before it catches you.",
+    palette: ["#36206B", "#F7E331"],
+    channels: ["orange-28", "toon-29", "music-30", "family-31"],
+    media: { provider: "youtube", videoId: "4wdKaRjtF-8", duration: 15, active: true },
+    lines: ["The beat just changed direction.", "Twist, tap, and keep the streak alive.", "Pass it fast, the next round starts now."],
+    fine: "Victory dance requires adequate living-room clearance.",
+    notes: "https://www.youtube.com/watch?v=4wdKaRjtF-8 - Analog Memories. Real ad: Bop It Extreme (1999). Archive uploader; rights ownership not confirmed; verify embed before activating."
+  },
+  {
+    id: "ad-hot-wheels-launcher-2000", kind: "toy", product: "STUNT CAR LAUNCHER",
+    tagline: "Send tiny wheels into maximum orbit.",
+    palette: ["#123C87", "#FF7B19"],
+    channels: ["orange-28", "toon-29", "family-31"],
+    media: { provider: "youtube", videoId: "TogaGw-rAjk", duration: 30, active: true },
+    lines: ["Load the car and lock the ramp.", "One launch turns the carpet into a speedway.", "Build the stunt that nobody saw coming."],
+    fine: "Household furniture may be promoted to race-course infrastructure.",
+    notes: "https://www.youtube.com/watch?v=TogaGw-rAjk - Analog Memories. Real ad: Hot Wheels Super Launcher (2000). Archive uploader; rights ownership not confirmed; verify embed before activating."
+  },
+  {
+    id: "ad-tonka-trucks-2000", kind: "toy", product: "HEAVY-DUTY TOY TRUCKS",
+    tagline: "Small trucks. Monumental jobs.",
+    palette: ["#F5B700", "#20252B"],
+    channels: ["orange-28", "toon-29", "family-31"],
+    media: { provider: "youtube", videoId: "nEJQDCbPgh8", duration: 15, active: true },
+    lines: ["The sandbox work order just arrived.", "Haul the rocks and clear the road.", "This crew does not clock out before supper."],
+    fine: "Imaginary construction permits sold separately.",
+    notes: "https://www.youtube.com/watch?v=nEJQDCbPgh8 - Analog Memories. Real ad: Tonka Trucks (2000). Archive uploader; rights ownership not confirmed; verify embed before activating."
+  },
+  {
+    id: "ad-family-games-2000", kind: "game", product: "FAMILY TABLETOP GAMES",
+    tagline: "Clear the table. Call the challengers.",
+    palette: ["#0B6B4F", "#FFD54A"],
+    channels: ["orange-28", "toon-29", "family-31"],
+    media: { provider: "youtube", videoId: "PY2KfW9Vdlw", duration: 15, active: true },
+    lines: ["Tonight, the kitchen table becomes center stage.", "Bring quick thinking and your luckiest game face.", "The winner chooses tomorrow's snack."],
+    fine: "Rules disputes may be settled by the nearest responsible grownup.",
+    notes: "https://www.youtube.com/watch?v=PY2KfW9Vdlw - Analog Memories. Real ad: Hasbro Get Together Games (2000). Archive uploader; rights ownership not confirmed; verify embed before activating."
+  },
+  {
+    id: "ad-talking-kitchen-2001", kind: "toy", product: "PRETEND PLAY KITCHEN",
+    tagline: "Today's special is pure imagination.",
+    palette: ["#46A6C8", "#FFCF5A"],
+    channels: ["orange-28", "family-31"],
+    media: { provider: "youtube", videoId: "FaM-59IrB1Q", duration: 21, active: true },
+    lines: ["The little cafe is open for business.", "Take one pretend order and add a generous scoop of imagination.", "Every customer leaves with an invisible dessert."],
+    fine: "Reservations accepted in crayon.",
+    notes: "https://www.youtube.com/watch?v=FaM-59IrB1Q - Analog Memories. Real ad: Fisher-Price Talking Chef Kitchen (2001). Archive uploader; rights ownership not confirmed; verify embed before activating."
+  },
+  {
+    id: "ad-cube-console-2001", kind: "game", product: "CUBE GAME CONSOLE",
+    tagline: "A whole new world fits inside the box.",
+    palette: ["#35158F", "#F2F0FF"],
+    channels: ["orange-28", "toon-29", "music-30", "family-31"],
+    media: { provider: "youtube", videoId: "UHb8oM7r1qA", duration: 30, active: true },
+    lines: ["Power up the cube and pick your portal.", "Race, explore, compete, and start again.", "The next level is waiting behind the screen."],
+    fine: "Extra controllers may reveal unexpected rivalries.",
+    notes: "https://www.youtube.com/watch?v=UHb8oM7r1qA - The Commercial Archive. Real ad: Nintendo GameCube (2001). Archive uploader; rights ownership not confirmed; verify embed before activating."
+  },
+  {
+    id: "ad-golden-graham-cereal-1998", kind: "cereal", product: "GRAHAM BREAKFAST CEREAL",
+    tagline: "Make the morning crunch count.",
+    palette: ["#B54A20", "#F5D36A"],
+    channels: ["orange-28", "toon-29", "family-31"],
+    media: { provider: "youtube", videoId: "tcCjQwYWmVc", duration: 30, active: true },
+    lines: ["The alarm clock has made its opening argument.", "Answer with a bowl full of golden crunch.", "Morning officially begins after the first spoonful."],
+    fine: "Sunrise not included in every box.",
+    notes: "https://www.youtube.com/watch?v=tcCjQwYWmVc - The Hall of Advertising. Real ad: Golden Grahams 'Fan' (1998, USA). Archive uploader; rights ownership not confirmed; verify embed before activating."
+  },
+  {
+    id: "ad-honey-corn-cereal-2000", kind: "cereal", product: "HONEY CORN CEREAL",
+    tagline: "A big crunch for busy mornings.",
+    palette: ["#EAAE22", "#603716"],
+    channels: ["orange-28", "toon-29", "family-31"],
+    media: { provider: "youtube", videoId: "I2QLm_7MHZk", duration: 31, active: true },
+    lines: ["A hungry morning is approaching.", "Pour in the honeyed crunch and rally the breakfast crew.", "Big spoons are standing by."],
+    fine: "Bears appearing near breakfast should not be offered the car keys.",
+    notes: "https://www.youtube.com/watch?v=I2QLm_7MHZk - The Hall of Advertising. Real ad: Post Honey-Comb 'Bears' (2000, USA). Archive uploader; rights ownership not confirmed; verify embed before activating."
+  },
+  {
+    id: "ad-life-cereal-2004", kind: "cereal", product: "WHOLE-GRAIN BREAKFAST CEREAL",
+    tagline: "Simple crunch. Solid start.",
+    palette: ["#B9272B", "#F1D48A"],
+    channels: ["orange-28", "toon-29", "family-31"],
+    media: { provider: "youtube", videoId: "nYdqcZZip3A", duration: 30, active: true },
+    lines: ["No complicated morning instructions required.", "Add cereal, add milk, and locate one clean spoon.", "You're ready for whatever the day scheduled."],
+    fine: "Locating matching socks remains your responsibility.",
+    notes: "https://www.youtube.com/watch?v=nYdqcZZip3A - Analog Memories. Real ad: Life Cereal (2004). Archive uploader; rights ownership not confirmed; verify embed before activating."
+  },
+  {
+    id: "ad-lunch-kit-hoops-1998", kind: "food", product: "PACKABLE LUNCH KIT",
+    tagline: "Lunch just entered the tournament.",
+    palette: ["#2564A8", "#F5C928"],
+    channels: ["orange-28", "toon-29", "family-31"],
+    media: { provider: "youtube", videoId: "h7k54Lze4Lo", duration: 31, active: true },
+    lines: ["Open the box and assemble the starting lineup.", "Build it, stack it, and take the winning bite.", "The lunch bell has never sounded this dramatic."],
+    fine: "Scoreboard statistics are not nutritionally significant.",
+    notes: "https://www.youtube.com/watch?v=h7k54Lze4Lo - The Hall of Advertising. Real ad: Oscar Mayer Lunchables 'Kitchen Hoops' (1998, USA). Archive uploader; rights ownership not confirmed; verify embed before activating."
+  },
+  {
+    id: "ad-stackable-crisps-2000", kind: "snack", product: "STACKABLE POTATO CRISPS",
+    tagline: "Open the tube. Release the crunch.",
+    palette: ["#C51D34", "#F7C833"],
+    channels: ["orange-28", "toon-29", "music-30", "family-31"],
+    media: { provider: "youtube", videoId: "eu_WqXF3YB8", duration: 31, active: true },
+    lines: ["The couch has called an emergency snack meeting.", "Pop the lid and pass the crunch down the row.", "Quiet moments are officially over."],
+    fine: "Perfect stacking results may be disrupted by hungry siblings.",
+    notes: "https://www.youtube.com/watch?v=eu_WqXF3YB8 - The Hall of Advertising. Real ad: Pringles 'Funny Boy/Couch' (2000, USA). Archive uploader; rights ownership not confirmed; verify embed before activating."
+  },
+  {
+    id: "ad-cheese-whirl-snack-2001", kind: "snack", product: "CURLY CHEESE SNACK",
+    tagline: "Twist the snack break into something louder.",
+    palette: ["#EF6B18", "#102D8A"],
+    channels: ["orange-28", "toon-29", "music-30", "family-31"],
+    media: { provider: "youtube", videoId: "J6VM72T9HTk", duration: 30, active: true },
+    lines: ["Straight snacks had their chance.", "Grab a crunchy spiral and turn up the afternoon.", "Orange fingertips are part of the adventure."],
+    fine: "Snack geometry has not been reviewed by a licensed mathematician.",
+    notes: "https://www.youtube.com/watch?v=J6VM72T9HTk - The Hall of Advertising. Real ad: Cheetos Whirlz 'Cool Cat' (2001, USA). Archive uploader; rights ownership not confirmed; verify embed before activating."
+  },
+  {
+    id: "ad-fish-crackers-2002", kind: "snack", product: "BAKED FISH-SHAPED CRACKERS",
+    tagline: "The snack bowl has gone swimming.",
+    palette: ["#E4572E", "#F3D34A"],
+    channels: ["orange-28", "toon-29", "family-31"],
+    media: { provider: "youtube", videoId: "iWnOPbAs6-Y", duration: 15, active: true },
+    lines: ["A tiny school of crackers has entered the bowl.", "Catch a handful before they swim away.", "Snack time is now officially afloat."],
+    fine: "No aquarium maintenance required.",
+    notes: "https://www.youtube.com/watch?v=iWnOPbAs6-Y - Analog Memories. Real ad: Goldfish Crackers (2002). Archive uploader; rights ownership not confirmed; verify embed before activating."
+  },
+  {
+    id: "ad-citrus-soda-2001", kind: "drink", product: "CITRUS SODA",
+    tagline: "Bright bubbles for a louder break.",
+    palette: ["#168C3F", "#F4ED42"],
+    channels: ["orange-28", "toon-29", "music-30", "family-31"],
+    media: { provider: "youtube", videoId: "pwb5VIu_09s", duration: 16, active: true },
+    lines: ["The afternoon needs a brighter color.", "Crack open the fizz and let the bubbles report for duty.", "Refreshment just painted outside the lines."],
+    fine: "Bubbles may refuse to remain inside the bottle.",
+    notes: "https://www.youtube.com/watch?v=pwb5VIu_09s - The Hall of Advertising. Real ad: 7-Up 'Painting Logo' (2001, USA). Archive uploader; rights ownership not confirmed; verify embed before activating."
+  },
+  {
+    id: "ad-chocolate-minis-2001", kind: "candy", product: "COLORFUL CHOCOLATE CANDIES",
+    tagline: "Small pieces. Big vocabulary.",
+    palette: ["#5A2A16", "#F4D03F"],
+    channels: ["orange-28", "toon-29", "music-30", "family-31"],
+    media: { provider: "youtube", videoId: "2E3Y3G1vN7c", duration: 17, active: true },
+    lines: ["Today's snack is searching for a more impressive description.", "Try crunchy, colorful, delightful, or simply gone.", "The final word belongs to whoever finds the last piece."],
+    fine: "Dictionary sold separately and probably covered in fingerprints.",
+    notes: "https://www.youtube.com/watch?v=2E3Y3G1vN7c - The Hall of Advertising. Real ad: M&M's 'Thesaurus' (2001, USA). Archive uploader; rights ownership not confirmed; verify embed before activating."
+  },
+  {
+    id: "ad-unicorn-kids-meal-2001", kind: "food", product: "UNICORN KIDS-MEAL TOY",
+    tagline: "A little lunch with a lot of imagination.",
+    palette: ["#D92F45", "#F7C945"],
+    channels: ["orange-28", "toon-29", "family-31"],
+    media: { provider: "youtube", videoId: "vRVmGTpS7sA", duration: 30, active: true },
+    lines: ["A mythical visitor has arrived beside the fries.", "Open the meal and begin a pocket-sized adventure.", "Lunch is only the first chapter."],
+    fine: "Magical transportation powers not included.",
+    notes: "https://www.youtube.com/watch?v=vRVmGTpS7sA - Analog Memories. Real ad: McDonald's/Toys R Us Happy Meal Unicorn (2001). Archive uploader; rights ownership not confirmed; verify embed before activating."
+  },
+  {
+    id: "ad-animated-movie-meal-2000", kind: "food", product: "ANIMATED MOVIE KIDS-MEAL TOYS",
+    tagline: "Dinner brought a miniature adventure.",
+    palette: ["#D82821", "#F0C62C"],
+    channels: ["orange-28", "toon-29", "family-31"],
+    media: { provider: "youtube", videoId: "wYuObQutV9E", duration: 30, active: true },
+    lines: ["A tiny movie crew has landed at the dinner table.", "Collect the characters and stage a brand-new escape.", "The next scene begins after one more bite."],
+    fine: "Toy chickens possess no actual flight certification.",
+    notes: "https://www.youtube.com/watch?v=wYuObQutV9E - Analog Memories. Real ad: Burger King Chicken Run toys (2000). Archive uploader; rights ownership not confirmed; verify embed before activating."
+  },
+  {
+    id: "ad-pocket-music-player-2004", kind: "tech", product: "POCKET MUSIC PLAYER",
+    tagline: "Carry the whole hallway soundtrack.",
+    palette: ["#E83C96", "#F7F7F7"],
+    channels: ["orange-28", "toon-29", "music-30"],
+    media: { provider: "youtube", videoId: "gop3HcsREOc", duration: 30, active: true },
+    lines: ["Your favorite song just left the bedroom.", "Load the playlist and take the beat down the block.", "Every sidewalk deserves a soundtrack."],
+    fine: "Dramatic silhouette dancing remains optional.",
+    notes: "https://www.youtube.com/watch?v=gop3HcsREOc - Analog Memories. Real ad: Apple iPod (2004). Archive uploader; rights ownership not confirmed; verify embed before activating."
+  },
 ];

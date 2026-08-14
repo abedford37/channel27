@@ -80,7 +80,7 @@
         : seg.contentBefore + state.segElapsed;       // single clip: time since content began
       return { media: state.media, elapsed };
     }
-    if (seg.type === "commercial" && seg.commercial.media) {
+    if (seg.type === "commercial" && seg.commercial.media && seg.commercial.media.active) {
       const m = C27.scheduler.normalizeMedia(seg.commercial.media);
       if (m) return { media: m, elapsed: state.segElapsed };
     }
