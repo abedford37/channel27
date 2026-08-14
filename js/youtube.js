@@ -27,6 +27,8 @@
   let captionsPref = true;
   let endedKey = null;      // non-loop video finished for this key
   let currentLoop = false;  // is the current clip a looping/sequenced pool clip
+  let fbIframe = null;      // plain-embed fallback when the IFrame API is blocked
+  let fbKey = null;
   let failCb = null;
   let lastError = null;
 
@@ -39,7 +41,7 @@
       if (window.YT && window.YT.Player) { apiState = "ready"; return resolve(); }
       const giveUp = setTimeout(() => {
         if (apiState === "loading") { apiState = "failed"; lastError = "api-timeout"; resolve(); }
-      }, 10000);
+      }, 30000);   // generous for slow connections; the plain-embed fallback still covers a true failure
       const prev = window.onYouTubeIframeAPIReady;
       window.onYouTubeIframeAPIReady = () => {
         if (prev) prev();
@@ -85,6 +87,33 @@
     const base = (media.startAt || 0) + elapsed;
     if (media.loop && media.duration > 0) return media.startAt + (elapsed % media.duration);
     return base;
+  }
+
+  // When the IFrame API can't load (commonly blocked by tracking prevention or a
+  // privacy extension), fall back to a plain nocookie embed so the clip still
+  // plays. We lose frame-accurate sync and end-detection, but the scheduler
+  // still swaps clips by updating the src, so the channel keeps showing video
+  // instead of dropping to the procedural cartoon.
+  function fallbackEmbed(media, elapsed) {
+    ensureWrap();
+    if (!fbIframe) {
+      wrap.innerHTML = "";               // no API player div in fallback mode
+      fbIframe = document.createElement("iframe");
+      fbIframe.id = "yt-fallback";
+      fbIframe.setAttribute("allow", "autoplay; encrypted-media; picture-in-picture");
+      fbIframe.setAttribute("allowfullscreen", "");
+      fbIframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+      fbIframe.setAttribute("frameborder", "0");
+      wrap.appendChild(fbIframe);
+    }
+    if (media.key !== fbKey) {           // only reload when the clip actually changes
+      fbKey = media.key;
+      currentVideoId = media.videoId;
+      const start = Math.max(0, Math.floor(targetTime(media, elapsed)));
+      const params = "autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1&start=" + start;
+      fbIframe.src = "https://www.youtube-nocookie.com/embed/" + media.videoId + "?" + params;
+    }
+    show();
   }
 
   function createPlayer(media, elapsed) {
@@ -149,8 +178,14 @@
     if (apiState === "idle") loadAPI();
     if (apiState === "loading") return;   // procedural stays visible meanwhile
     if (apiState === "failed" || !window.YT || !window.YT.Player) {
-      // API unavailable (offline / file:// / blocked): stay procedural
-      if (failCb) failCb(media.key, lastError || "api-unavailable");
+      // IFrame API unavailable (offline, file://, or blocked by tracking
+      // prevention). Over http(s) we can still show a plain embed; from
+      // file:// there is no valid origin, so stay procedural.
+      if (/^https?:$/.test(location.protocol)) {
+        fallbackEmbed(media, elapsed);
+      } else if (failCb) {
+        failCb(media.key, lastError || "api-unavailable");
+      }
       return;
     }
 
@@ -191,6 +226,7 @@
   function stop() {
     hide();
     if (player && player.pauseVideo) { try { player.pauseVideo(); } catch (e) { /* fine */ } }
+    if (fbIframe) { fbIframe.src = "about:blank"; fbKey = null; }   // stop background playback
   }
 
   function setMuted(m) {
@@ -211,6 +247,7 @@
   function getStatus() {
     return {
       apiLoaded: !!(window.YT && window.YT.Player),
+      fallback: !!fbIframe,
       visible, currentVideoId, endedKey, lastError
     };
   }
