@@ -1,64 +1,61 @@
-// ============================================================
-// FAMILY 31 — WEEKLY SCHEDULE
-// ============================================================
-// Programming rhythm informed by archived listings for family
-// cable networks circa 1997-1999 (Disney Channel-era pattern:
-// preschool mornings, family animation midday, educational
-// programming after school, live-action youth shows in the
-// early evening, a nightly family movie, music/performance
-// programming, and calm overnight filler). This is a
-// synthesized homage, not a reproduced network schedule.
-// All program titles are original.
-// ============================================================
+/*
+  CHANNEL 31 - FAMILY
+
+  Historical grounding (rhythm only; all program identities below are original):
+  An archived Friday, June 7, 2002 cable schedule shows young-child programming
+  running from roughly 5:00 a.m. through 12:30 p.m., a daytime movie, youth
+  comedy after 3:00 p.m., animation in early evening, an 8:00 p.m. movie, and
+  library programming overnight.
+  Reference: https://kidsblockblog.wordpress.com/2020/11/24/disney-channel-schedule-for-friday-june-7-2002/
+
+  Channel 31 reinterprets that daypart structure without using the referenced
+  network's brands, characters, show titles, visual identity, or block names.
+*/
 
 window.C27 = window.C27 || {};
 window.C27.SCHEDULES = window.C27.SCHEDULES || {};
 
-(function () {
-  const weekday = [
-    ["00:00", "quiet-hours"],           // calm overnight
-    ["06:00", "sunrise-storybook"],     // preschool morning
-    ["09:00", "cartoon-clubhouse-31"],
-    ["11:00", "sunrise-storybook"],
-    ["12:00", "cartoon-clubhouse-31"],
-    ["14:00", "discovery-den"],         // educational afternoon
-    ["16:00", "clubhouse-afternoon"],   // live-action youth
-    ["18:00", "cartoon-clubhouse-31"],
-    ["19:00", "family-movie-31"],       // the nightly family movie
-    ["21:00", "sing-along-stage"],
-    ["22:00", "quiet-hours"]
-  ];
-
-  window.C27.SCHEDULES["family-31"] = {
-    mon: weekday.map(e => e.slice()),
-    tue: weekday.map(e => e.slice()),
-    wed: weekday.map(e => e.slice()),
-    thu: weekday.map(e => e.slice()),
-    fri: weekday.map(e => e.slice()),
-
-    sat: [
-      ["00:00", "quiet-hours"],
-      ["06:00", "sunrise-storybook"],
-      ["08:00", "cartoon-clubhouse-31"],
-      ["11:00", "weekend-matinee"],      // Saturday matinee
-      ["13:00", "clubhouse-afternoon"],
-      ["15:00", "discovery-den"],
-      ["17:00", "sing-along-stage"],
-      ["19:00", "family-movie-31"],      // Saturday night feature
-      ["21:00", "family-movie-31"],      // double feature
-      ["23:00", "quiet-hours"]
-    ],
-
-    sun: [
-      ["00:00", "quiet-hours"],
-      ["06:00", "sunrise-storybook"],
-      ["09:00", "discovery-den"],        // Sunday learning morning
-      ["11:00", "weekend-matinee"],
-      ["13:00", "cartoon-clubhouse-31"],
-      ["15:00", "discovery-den"],
-      ["17:00", "clubhouse-afternoon"],
-      ["19:00", "family-movie-31"],
-      ["21:00", "quiet-hours"]
-    ]
-  };
-})();
+window.C27.SCHEDULES["family-31"] = {
+  mon: [
+    ["00:00", "family-dreamlight-hours"], ["05:30", "family-little-daybreak"], ["09:00", "family-storybook-window"],
+    ["11:00", "family-curiosity-club"], ["13:00", "family-make-and-notice"], ["14:00", "family-storybook-window"],
+    ["15:30", "family-after-school-sketchbook"], ["17:00", "family-sidewalk-stories"], ["18:30", "family-clubhouse-challenge"],
+    ["20:00", "family-picture-night"], ["22:00", "family-dreamlight-hours"]
+  ],
+  tue: [
+    ["00:00", "family-dreamlight-hours"], ["05:30", "family-little-daybreak"], ["09:00", "family-storybook-window"],
+    ["11:00", "family-make-and-notice"], ["12:00", "family-curiosity-club"], ["14:00", "family-storybook-window"],
+    ["15:30", "family-after-school-sketchbook"], ["17:00", "family-sidewalk-stories"], ["18:30", "family-together-time"],
+    ["20:00", "family-picture-night"], ["22:00", "family-dreamlight-hours"]
+  ],
+  wed: [
+    ["00:00", "family-dreamlight-hours"], ["05:30", "family-little-daybreak"], ["09:00", "family-storybook-window"],
+    ["11:00", "family-curiosity-club"], ["13:00", "family-make-and-notice"], ["14:00", "family-storybook-window"],
+    ["15:30", "family-after-school-sketchbook"], ["17:00", "family-sidewalk-stories"], ["18:30", "family-clubhouse-challenge"],
+    ["20:00", "family-picture-night"], ["22:00", "family-dreamlight-hours"]
+  ],
+  thu: [
+    ["00:00", "family-dreamlight-hours"], ["05:30", "family-little-daybreak"], ["09:00", "family-storybook-window"],
+    ["11:00", "family-make-and-notice"], ["12:00", "family-curiosity-club"], ["14:00", "family-storybook-window"],
+    ["15:30", "family-after-school-sketchbook"], ["17:00", "family-sidewalk-stories"], ["18:30", "family-together-time"],
+    ["20:00", "family-picture-night"], ["22:00", "family-dreamlight-hours"]
+  ],
+  fri: [
+    ["00:00", "family-dreamlight-hours"], ["05:30", "family-little-daybreak"], ["09:00", "family-storybook-window"],
+    ["11:00", "family-curiosity-club"], ["13:00", "family-make-and-notice"], ["14:00", "family-storybook-window"],
+    ["15:00", "family-after-school-sketchbook"], ["16:30", "family-sidewalk-stories"], ["18:00", "family-clubhouse-challenge"],
+    ["19:30", "family-picture-night"], ["21:30", "family-together-time"], ["23:00", "family-dreamlight-hours"]
+  ],
+  sat: [
+    ["00:00", "family-dreamlight-hours"], ["06:00", "family-little-daybreak"], ["08:00", "family-make-and-notice"],
+    ["10:00", "family-curiosity-club"], ["12:00", "family-storybook-window"], ["14:00", "family-clubhouse-challenge"],
+    ["16:00", "family-sidewalk-stories"], ["18:00", "family-together-time"], ["19:30", "family-picture-night"],
+    ["21:30", "family-storybook-window"], ["23:00", "family-dreamlight-hours"]
+  ],
+  sun: [
+    ["00:00", "family-dreamlight-hours"], ["06:00", "family-little-daybreak"], ["08:00", "family-storybook-window"],
+    ["10:00", "family-curiosity-club"], ["12:00", "family-together-time"], ["14:00", "family-make-and-notice"],
+    ["16:00", "family-after-school-sketchbook"], ["18:00", "family-sidewalk-stories"], ["19:00", "family-picture-night"],
+    ["21:00", "family-storybook-window"], ["22:30", "family-dreamlight-hours"]
+  ]
+};

@@ -1292,109 +1292,108 @@ window.C27.SHOWS = [
       "Twenty numbered cards fan across the screen.", "This week's chart begins its climb toward number one." ] }]
   },
 
-  // ---------- FAMILY 31 ----------
+  // ---------- FAMILY 31 (family) ----------
   {
-    id: "sunrise-storybook", title: "Sunrise Storybook", genre: "Preschool", rating: "TV-Y",
+    id: "family-dreamlight-hours", title: "Dreamlight Hours", genre: "Calm Overnight", rating: "TV-Y",
+    style: "nature", palette: ["#142A3B", "#7199A8", "#E8E1C8"],
+    tagline: "Quiet skies, sleepy sounds, and gentle journeys until morning.",
+    episodes: [
+      { title: "Standby", synopsis: "A peaceful overnight sequence of moonlit hills, drifting clouds, and resting woodland creatures.", scenes: [
+        "The little town settles beneath the stars.",
+        "Morning light waits beyond the hills." ] }
+    ]
+  },
+  {
+    id: "family-little-daybreak", title: "Little Daybreak", genre: "Preschool Learning", rating: "TV-Y",
     style: "preschool", palette: ["#7BC4A4", "#F2D06B", "#1D3A5F"],
-    tagline: "One page at a time.",
+    tagline: "Wake up with small discoveries and friendly questions.",
+    mediaPool: ["family-measuring-objects", "family-community-helpers"],
     episodes: [
-      { title: "The Quiet Bear", synopsis: "A bear learns everyone naps differently.", scenes: [
-        "Once upon a morning, a bear woke up slowly.",
-        "The bear stretched one paw. Then, bravely, the other.",
-        "Every friend in the forest naps their own way.",
-        "The end. Let's read it again a little slower." ] }
+      { title: "Standby", synopsis: "Shapes, sounds, neighbors, and counting games begin the day.", scenes: [
+        "Can you find the smallest shape?",
+        "Every neighborhood has helping hands." ] }
     ]
   },
   {
-    id: "cartoon-clubhouse-31", title: "Cartoon Clubhouse", genre: "Family Animation", rating: "TV-Y7",
-    style: "toon", palette: ["#1D3A5F", "#7BC4A4", "#F2D06B"],
-    tagline: "Everyone's invited. Bring snacks.",
+    id: "family-storybook-window", title: "Storybook Window", genre: "Family Animation", rating: "TV-Y",
+    style: "toon", palette: ["#6C4A73", "#E9B872", "#F6ECD7"],
+    tagline: "Open the window and let a brand-new tale wander in.",
     episodes: [
-      { title: "Clubhouse Reel", synopsis: "Gentle cartoons for the whole couch.", scenes: [
-        "The clubhouse is open! Wipe your feet.",
-        "Today's cartoon has a lesson hidden in it. Shhh.",
-        "The lesson is friendship. It's usually friendship." ] }
+      { title: "Standby", synopsis: "Original illustrated stories about kindness, patience, and imaginative problem-solving.", scenes: [
+        "A paper boat carries a very important letter.",
+        "The smallest lantern finds the longest road." ] }
     ]
   },
   {
-    id: "discovery-den", title: "Discovery Den", genre: "Educational", rating: "TV-G",
-    style: "nature", palette: ["#25452E", "#7BC4A4", "#F2D06B"],
-    tagline: "Questions welcome. Especially weird ones.",
+    id: "family-curiosity-club", title: "Curiosity Club", genre: "Nature & Education", rating: "TV-Y",
+    style: "nature", palette: ["#2D6A4F", "#95C97B", "#F4E3A1"],
+    tagline: "Look closely. Every sound, animal, and object has a story.",
+    mediaPool: ["family-talking-siamangs", "family-sounds-all-around"],
     episodes: [
-      { title: "Why Is The Sky?", synopsis: "A child asks. We investigate for 30 minutes.", scenes: [
-        "Today's question comes from Marcus, age six: why is the sky?",
-        "Excellent question, Marcus. Scientists agree: it just is not simple.",
-        "Light bounces around like a ball in a gymnasium.",
-        "Tomorrow's question: do fish know they're wet?" ] },
-      { title: "The Museum Sleeps Over", synopsis: "What museums do at night (cleaning, mostly).", scenes: [
-        "After closing, the museum gets a bath.",
-        "The dinosaur bones are dusted with a very soft brush.",
-        "The night guard waves at the paintings. They understand." ] }
+      { title: "Standby", synopsis: "Young viewers observe animals, listen to everyday sounds, and practice asking useful questions.", scenes: [
+        "What can an animal's call tell us?",
+        "Close your eyes. How many sounds can you find?" ] }
     ]
   },
   {
-    id: "clubhouse-afternoon", title: "The Treehouse Crew", genre: "Live-Action Youth", rating: "TV-G",
-    style: "sitcom", palette: ["#2A6B4F", "#F2D06B", "#1D3A5F"],
-    tagline: "Five kids, one ladder, infinite plans.",
+    id: "family-make-and-notice", title: "Make & Notice", genre: "Creative Learning", rating: "TV-Y",
+    style: "preschool", palette: ["#D96C75", "#F6C85F", "#5D87A1"],
+    tagline: "Look carefully, make something, and share what you see.",
+    mediaPool: ["family-posing-portrait"],
     episodes: [
-      { title: "The Lemonade Merger", synopsis: "Two stands become an empire, briefly.", scenes: [
-        "The rival stand across the street has ice. ICE.",
-        "A merger is proposed via paper airplane.",
-        "Profits are split 50/50/50, which takes a while to fix.",
-        "The empire dissolves at dinnertime, as empires do." ] }
+      { title: "Standby", synopsis: "A gentle art-and-observation workshop using simple household materials.", scenes: [
+        "Choose a pose that tells a story.",
+        "What colors show how you feel today?" ] }
     ]
   },
   {
-    id: "family-movie-31", title: "Family Feature", genre: "Movie", rating: "TV-G",
-    style: "movie", palette: ["#0A1030", "#F2D06B", "#7BC4A4"],
-    tagline: "Popcorn is a vegetable tonight.",
+    id: "family-after-school-sketchbook", title: "After-School Sketchbook", genre: "Comedy Animation", rating: "TV-Y7",
+    style: "toon", palette: ["#3446A3", "#FF9F1C", "#F7F3E8"],
+    tagline: "Doodles, detours, and one more adventure before dinner.",
     episodes: [
-      { title: "The Dog Who Ran For Mayor", synopsis: "He has no policies. He wins anyway.", scenes: [
-        "TONIGHT'S FEATURE: a small town, a big election, a good boy.",
-        "The debate goes poorly for the human candidates.",
-        "His entire platform is one bark, and honestly, it lands.",
-        "The town is fine. Better, even. Roll credits." ] },
-      { title: "Summer at Grandma's", synopsis: "There is nothing to do. It's perfect.", scenes: [
-        "TONIGHT'S FEATURE: one summer, zero plans.",
-        "Grandma's rules: eat breakfast, be kind, be home by fireflies.",
-        "The creek is cold and the days are enormous.",
-        "September arrives too soon. It always does." ] }
+      { title: "Standby", synopsis: "Original animated friends turn ordinary school-day mix-ups into playful adventures.", scenes: [
+        "The science poster has escaped into the hallway.",
+        "A missing lunchbox leaves a trail of crackers." ] }
     ]
   },
   {
-    id: "sing-along-stage", title: "The Sing-Along Stage", genre: "Music & Performance", rating: "TV-Y",
-    style: "music", palette: ["#7BC4A4", "#F2D06B", "#1D3A5F"],
-    tagline: "The bouncing ball knows the way.",
+    id: "family-sidewalk-stories", title: "Sidewalk Stories", genre: "Youth Comedy", rating: "TV-G",
+    style: "sitcom", palette: ["#245A73", "#E88D67", "#F3E9D2"],
+    tagline: "Growing up happens one block, one friend, and one surprise at a time.",
     episodes: [
-      { title: "Stage Night", synopsis: "Songs with words on screen and joy in hearts.", scenes: [
-        "Follow the bouncing ball! It has rehearsed.",
-        "Verse two is the same as verse one. You've got this.",
-        "The big finish is coming. Take a breath.",
-        "Beautiful. The stage lights dim. Goodnight, singers." ] }
+      { title: "Standby", synopsis: "An original neighborhood comedy about friends solving everyday school and block problems.", scenes: [
+        "The club fundraiser needs a brand-new plan.",
+        "A promise between friends is worth keeping." ] }
     ]
   },
   {
-    id: "quiet-hours", title: "Quiet Hours", genre: "Calm Overnight", rating: "TV-G",
-    style: "nature", palette: ["#0E1A2A", "#3A5F7B", "#7BC4A4"],
-    tagline: "The channel tucks itself in.",
+    id: "family-clubhouse-challenge", title: "Clubhouse Challenge", genre: "Family Game Show", rating: "TV-G",
+    style: "game", palette: ["#173F5F", "#3CAEA3", "#F6D55C"],
+    tagline: "Teamwork turns everyday objects into extraordinary solutions.",
     episodes: [
-      { title: "Nightlight", synopsis: "Slow scenes for sleeping houses.", scenes: [
-        "The house is quiet. The channel is quiet too.",
-        "Somewhere, a porch light hums its one note.",
-        "Rain is forecast for the land of nod.",
-        "Sleep well. We'll keep the signal warm." ] }
+      { title: "Standby", synopsis: "Families tackle cooperative puzzles, drawing games, and low-stakes building challenges.", scenes: [
+        "Build the tallest tower with ten paper cups.",
+        "One clue remains, so ask your teammate." ] }
     ]
   },
   {
-    id: "weekend-matinee", title: "Weekend Matinee", genre: "Movie", rating: "TV-G",
-    style: "movie", palette: ["#1D3A5F", "#F2D06B", "#7BC4A4"],
-    tagline: "Curtains up before lunch.",
+    id: "family-together-time", title: "Together Time", genre: "Family Variety", rating: "TV-G",
+    style: "cooking", palette: ["#8C5E58", "#E8C07D", "#5C8D89"],
+    tagline: "Stories, simple recipes, and projects made better together.",
     episodes: [
-      { title: "The Kite Championship", synopsis: "A town, a wind, a very long string.", scenes: [
-        "THE MATINEE: the annual kite championship approaches.",
-        "Our hero's kite is homemade and slightly haunted.",
-        "The wind arrives fashionably late.",
-        "The trophy is shared. The sky is full. The end." ] }
+      { title: "Standby", synopsis: "A warm family hour combining simple cooking, crafts, conversation, and music.", scenes: [
+        "Tonight's snack needs three colorful ingredients.",
+        "Every family keeps a different kind of tradition." ] }
+    ]
+  },
+  {
+    id: "family-picture-night", title: "Picture Night", genre: "Family Movie", rating: "TV-G",
+    style: "movie", palette: ["#16213E", "#E2B857", "#F8F1E1"],
+    tagline: "A new procedural family adventure begins every evening.",
+    episodes: [
+      { title: "Standby", synopsis: "An original feature-length procedural story centered on friendship, discovery, and a safe return home.", scenes: [
+        "The map points toward a town no one remembers.",
+        "Home is closer when everyone travels together." ] }
     ]
   }
 ];

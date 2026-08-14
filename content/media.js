@@ -1,4 +1,4 @@
-/// ============================================================
+// ============================================================
 // CHANNEL 27 CABLE SYSTEM — MEDIA CATALOG
 // ============================================================
 // Manually curated YouTube records. The repository stores ONLY
@@ -127,6 +127,48 @@ window.C27.MEDIA = [
     notes: "https://www.youtube.com/watch?v=Cb3ggoyqXmU - Official channel opening theme (short promo), period-correct. Confirm the exact upload embeds."
   },
 
+
+
+  // ---------- FAMILY 31 (curated, all inactive pending embed test) ----------
+  // "Pinky's Smithsonian Adventure": official Smithsonian's National Zoo
+  // educational series for young learners. Series confirmed real/official via
+  // web search Aug 2026; the specific video IDs and runtimes did not surface in
+  // search, so confirm each in the embed test before activating.
+  {
+    id: "family-measuring-objects", title: "Little Daybreak", episodeTitle: "Pinky's Smithsonian Adventure: Measuring Objects",
+    type: "educational", provider: "youtube", videoId: "THWy-bU-sw8", duration: 862, captions: false,
+    sourceChannel: "Smithsonian's National Zoo", sourceType: "official", channels: ["family-31"], active: true,
+    fallbackStyle: "preschool", historicalYear: 2002,
+    notes: "https://www.youtube.com/watch?v=THWy-bU-sw8 - Official Smithsonian educational upload. Confirm this exact ID, runtime, and embeddability in the test."
+  },
+  {
+    id: "family-community-helpers", title: "Little Daybreak", episodeTitle: "Pinky's Smithsonian Adventure: Smithsonian Community Helpers",
+    type: "educational", provider: "youtube", videoId: "1IjVTe9K8zk", duration: 755, captions: false,
+    sourceChannel: "Smithsonian's National Zoo", sourceType: "official", channels: ["family-31"], active: true,
+    fallbackStyle: "preschool", historicalYear: 2002,
+    notes: "https://www.youtube.com/watch?v=1IjVTe9K8zk - Official Smithsonian educational upload. Confirm ID/runtime/embed in the test."
+  },
+  {
+    id: "family-talking-siamangs", title: "Curiosity Club", episodeTitle: "Pinky's Smithsonian Adventure: Talking Siamangs",
+    type: "educational", provider: "youtube", videoId: "9jXEsR749NM", duration: 263, captions: false,
+    sourceChannel: "Smithsonian's National Zoo", sourceType: "official", channels: ["family-31"], active: true,
+    fallbackStyle: "nature", historicalYear: 2002,
+    notes: "https://www.youtube.com/watch?v=9jXEsR749NM - Official Smithsonian educational upload. Confirm ID/runtime/embed in the test."
+  },
+  {
+    id: "family-sounds-all-around", title: "Curiosity Club", episodeTitle: "Pinky's Smithsonian Adventure: Sounds All Around",
+    type: "educational", provider: "youtube", videoId: "DFLPm-nFFMc", duration: 677, captions: false,
+    sourceChannel: "Smithsonian's National Zoo", sourceType: "official", channels: ["family-31"], active: true,
+    fallbackStyle: "nature", historicalYear: 2002,
+    notes: "https://www.youtube.com/watch?v=DFLPm-nFFMc - Official Smithsonian educational upload. Confirm ID/runtime/embed in the test."
+  },
+  {
+    id: "family-posing-portrait", title: "Make & Notice", episodeTitle: "Pinky's Smithsonian Adventure: Posing like a Portrait",
+    type: "educational", provider: "youtube", videoId: "aWBI6GM_qY4", duration: 84, captions: false,
+    sourceChannel: "Smithsonian's National Zoo", sourceType: "official", channels: ["family-31"], active: true,
+    fallbackStyle: "preschool", historicalYear: 2002,
+    notes: "https://www.youtube.com/watch?v=aWBI6GM_qY4 - Official Smithsonian educational upload (short). Confirm ID/embed in the test."
+  },
 
   // ---------- MUSIC 30 (curated, all inactive pending embed test) ----------
   // Official VEVO / artist-channel uploads, 2000-2004 breakout artists.
