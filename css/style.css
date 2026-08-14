@@ -605,3 +605,97 @@ body.calm #staticfx.on { opacity: .35; }
   .g-chrow { grid-template-columns: 2.4rem 1fr auto; }
   .g-chrow .g-chname { display: none; }
 }
+
+/* ============================================================
+   RETRO TV CABINET
+   Wraps the broadcast in a period set. Pure CSS over the existing
+   #tv / #screen / #infobar, so no markup or script changes and all
+   behavior (channel surfing, guide, fullscreen) is preserved.
+   Values are tuned to taste; adjust freely.
+   ============================================================ */
+:root { --cab-bezel: clamp(14px, 2.3vw, 28px); }
+
+/* the room the set sits in */
+body {
+  background:
+    radial-gradient(125% 95% at 50% 20%, #17171f 0%, #0b0b11 55%, #060608 100%);
+  display: grid;
+  place-items: center;
+  padding: clamp(6px, 2.4vw, 40px);
+}
+
+/* the cabinet */
+#tv {
+  position: relative;                 /* was fixed / inset:0 */
+  inset: auto;
+  width: min(94vw, 1060px, 119vh);
+  aspect-ratio: 4 / 3.18;
+  max-height: 95vh;
+  padding: var(--cab-bezel);
+  padding-bottom: calc(var(--cab-bezel) + clamp(12px, 1.7vw, 24px));
+  box-sizing: border-box;
+  border-radius: clamp(18px, 2.6vw, 36px);
+  background:
+    /* power light */
+    radial-gradient(circle 3px at calc(50% + 108px) calc(100% - clamp(13px,1.5vw,19px)),
+      #7dffb4 0 60%, rgba(125,255,180,0) 62%),
+    radial-gradient(circle 10px at calc(50% + 108px) calc(100% - clamp(13px,1.5vw,19px)),
+      rgba(110,255,170,.30) 0%, rgba(110,255,170,0) 72%),
+    /* plastic case */
+    linear-gradient(152deg, #433f4c 0%, #2c2934 10%, #201d27 46%, #16131c 100%);
+  box-shadow:
+    inset 0 3px 1px rgba(255,255,255,.07),
+    inset 0 0 0 2px rgba(0,0,0,.45),
+    inset 0 -22px 46px rgba(0,0,0,.4),
+    0 36px 74px -14px rgba(0,0,0,.72),
+    0 12px 26px rgba(0,0,0,.55);
+  overflow: hidden;
+}
+
+/* soft highlight across the top of the case */
+#tv::before {
+  content: "";
+  position: absolute; left: 9%; right: 9%; top: 3px; height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(62% 100% at 50% 0, rgba(255,255,255,.11), transparent 72%);
+  pointer-events: none; z-index: 1;
+}
+
+/* brand nameplate on the chin */
+#tv::after {
+  content: "C A T H O D E";
+  position: absolute; left: 0; right: 0;
+  bottom: clamp(9px, 1.1vw, 15px);
+  text-align: center;
+  font-family: "Titan One", system-ui, sans-serif;
+  font-size: clamp(9px, 1.15vw, 13px);
+  letter-spacing: .34em;
+  color: rgba(237,239,223,.32);
+  text-shadow: 0 1px 0 rgba(0,0,0,.65);
+  pointer-events: none; z-index: 1;
+}
+
+/* the tube: inner double-ring bezel + curvature */
+#screen {
+  margin: 0;
+  border-radius: clamp(10px, 1.8vw, 22px) / clamp(14px, 2.4vw, 30px);
+  box-shadow:
+    inset 0 0 130px rgba(0,0,0,.6),
+    inset 0 0 0 1px rgba(0,0,0,.85),
+    0 0 0 clamp(3px, .55vw, 7px) #0b0a10,
+    0 0 0 clamp(4px, .8vw, 10px) #322e3b,
+    0 8px 24px rgba(0,0,0,.7);
+}
+
+/* control strip reads as the cabinet's front panel */
+#infobar {
+  background: linear-gradient(#221f2b, #17141d);
+  border-top: 1px solid rgba(255,255,255,.05);
+  z-index: 5;
+}
+
+/* fullscreen: let the set fill the display */
+#tv:fullscreen {
+  width: 100vw; height: 100vh; max-height: none; aspect-ratio: auto;
+  border-radius: 0;
+}
