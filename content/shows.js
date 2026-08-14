@@ -1188,99 +1188,108 @@ window.C27.SHOWS = [
     ]
   },
 
-  // ---------- MUSIC 30 ----------
+  // ---------- MUSIC 30 (music videos) ----------
   {
-    id: "wake-up-videos", title: "Wake-Up Videos", genre: "Music Videos", rating: "TV-G",
-    style: "music", palette: ["#2E1A4F", "#FF4FA0", "#63E2C6"],
-    tagline: "Coffee for your ears.",
-    mediaPool: ["mv-torn", "mv-wannabe", "mv-believe"],
-    episodes: [
-      { title: "Morning Rotation", synopsis: "Videos to wake up to.", scenes: [
-        "Good morning. The videos are already awake.",
-        "This hour is 90% choruses you know by heart.",
-        "Request line opens at noon. It is never not busy." ] }
-    ]
+    id: "music-sunrise-rotation", title: "Sunrise Rotation", genre: "Morning Music Videos", rating: "TV-PG",
+    style: "music", palette: ["#FFF2B3", "#FF6F61", "#5B7CFA"],
+    tagline: "Bright hooks and familiar faces before the day gets loud.",
+    mediaPool: ["music-pop-prism-britney-oops", "music-pop-prism-avril-complicated", "music-pop-prism-nelly-bird",
+      "music-pop-prism-vanessa-thousand-miles", "music-soul-circuit-alicia-fallin",
+      "music-soul-circuit-destinys-child-survivor", "music-soul-circuit-mario-let-me-love-you"],
+    episodes: [{ title: "Standby", synopsis: "A warm morning rotation of pop and R&B premieres.", scenes: [
+      "The first video of the day is cued.", "Morning requests scroll beneath the signal." ] }]
   },
   {
-    id: "the-request-line", title: "The Request Line", genre: "Countdown", rating: "TV-G",
-    style: "music", palette: ["#160A2E", "#FF4FA0", "#F5D442"],
-    tagline: "You asked for these. Statistically.",
-    mediaPool: ["mv-wannabe", "mv-torn", "mv-believe"],
-    episodes: [
-      { title: "Afternoon Top Requests", synopsis: "The countdown, counted down.", scenes: [
-        "The request line is glowing. Literally, it's a prop.",
-        "Number four was requested by an entire slumber party.",
-        "The number one spot has not changed in six weeks.",
-        "Call now. Or don't. It'll still be this song." ] }
-    ]
+    id: "music-full-spectrum", title: "Full Spectrum", genre: "All-Genre Video Rotation", rating: "TV-PG",
+    style: "music", palette: ["#10152C", "#00D9FF", "#FFCC33"],
+    tagline: "Pop, rhythm, guitars, and electronic color on one frequency.",
+    mediaPool: ["music-pop-prism-britney-oops", "music-pop-prism-avril-complicated", "music-pop-prism-nelly-bird",
+      "music-pop-prism-vanessa-thousand-miles", "music-soul-circuit-alicia-fallin",
+      "music-soul-circuit-destinys-child-survivor", "music-soul-circuit-mario-let-me-love-you",
+      "music-rhyme-relay-outkast-hey-ya", "music-rhyme-relay-bep-where-is-love",
+      "music-guitar-voltage-linkin-in-the-end", "music-guitar-voltage-evanescence-bring-me-life",
+      "music-guitar-voltage-white-stripes-seven-nation-army", "music-neon-frequency-daft-punk-one-more-time",
+      "music-neon-frequency-modjo-lady"],
+    episodes: [{ title: "Standby", synopsis: "The channel library shuffles across the defining sounds of 2000-2004.", scenes: [
+      "A chrome station ID resolves into equalizer bars.", "The next artist card flips onto the screen." ] }]
   },
   {
-    id: "rnb-avenue", title: "Avenue", genre: "R&B Block", rating: "TV-PG",
-    style: "music", palette: ["#2A1030", "#C46BB0", "#F5D442"],
-    tagline: "Smooth from six to eight.",
-    episodes: [
-      { title: "Evening Avenue", synopsis: "The velvet hours.", scenes: [
-        "Streetlights on. Avenue begins.",
-        "This block is best experienced near a window.",
-        "Tonight's set is dedicated to slow dancing in kitchens." ] }
-    ]
+    id: "music-request-line-ten", title: "Request Line Ten", genre: "Viewer Countdown", rating: "TV-PG",
+    style: "music", palette: ["#23083C", "#FF4FA0", "#63E2C6"],
+    tagline: "Ten requested videos, one top slot, and a clock that never waits.",
+    mediaPool: ["music-pop-prism-britney-oops", "music-pop-prism-avril-complicated", "music-pop-prism-nelly-bird",
+      "music-pop-prism-vanessa-thousand-miles", "music-soul-circuit-alicia-fallin",
+      "music-soul-circuit-destinys-child-survivor", "music-soul-circuit-mario-let-me-love-you",
+      "music-rhyme-relay-outkast-hey-ya", "music-rhyme-relay-bep-where-is-love",
+      "music-guitar-voltage-linkin-in-the-end", "music-guitar-voltage-evanescence-bring-me-life",
+      "music-guitar-voltage-white-stripes-seven-nation-army"],
+    episodes: [{ title: "Standby", synopsis: "The afternoon request chart counts down toward the day's number one video.", scenes: [
+      "Incoming votes pulse across a translucent map.", "The countdown locks in its next position." ] }]
   },
   {
-    id: "beats-and-rhymes", title: "Beats & Rhymes", genre: "Hip-Hop Block", rating: "TV-PG",
-    style: "music", palette: ["#181818", "#F5D442", "#FF4FA0"],
-    tagline: "Turn it up. Then a little more.",
-    episodes: [
-      { title: "Night Session", synopsis: "The evening hip-hop block.", scenes: [
-        "The bass has entered the building.",
-        "Tonight: videos with at least one slow-motion walk.",
-        "Our host nods exactly on beat. It's a gift." ] }
-    ]
+    id: "music-pop-prism", title: "Pop Prism", genre: "Pop", rating: "TV-PG",
+    style: "music", palette: ["#5C1C88", "#FF72B6", "#B7F5FF"],
+    tagline: "Big choruses refracted through candy-colored television.",
+    mediaPool: ["music-pop-prism-britney-oops", "music-pop-prism-avril-complicated",
+      "music-pop-prism-nelly-bird", "music-pop-prism-vanessa-thousand-miles"],
+    episodes: [{ title: "Standby", synopsis: "Breakout pop videos from the turn of the millennium.", scenes: [
+      "A jewel-toned lens flare crosses the frame.", "The pop line lights up for another premiere." ] }]
   },
   {
-    id: "left-of-the-dial", title: "Left of the Dial", genre: "Alternative Block", rating: "TV-PG",
-    style: "music", palette: ["#1E2A22", "#8FBF6B", "#F5F0E6"],
-    tagline: "Flannel-forward programming.",
-    episodes: [
-      { title: "Alt Hour", synopsis: "Guitars, feelings, weather.", scenes: [
-        "This block is filmed almost entirely in overcast.",
-        "The lead singer is looking away from the camera. Art.",
-        "Coming up: a video shot in one take in a laundromat." ] }
-    ]
+    id: "music-soul-circuit", title: "Soul Circuit", genre: "R&B and Soul", rating: "TV-PG",
+    style: "music", palette: ["#29152F", "#D99A4E", "#F7D9C4"],
+    tagline: "Slow grooves, bright voices, and late-afternoon soul.",
+    mediaPool: ["music-soul-circuit-alicia-fallin", "music-soul-circuit-destinys-child-survivor",
+      "music-soul-circuit-mario-let-me-love-you"],
+    episodes: [{ title: "Standby", synopsis: "R&B breakthroughs and crossover favorites from 2001-2004.", scenes: [
+      "Amber waveforms roll across a dark studio.", "The groove settles into the next selection." ] }]
   },
   {
-    id: "the-loud-room", title: "The Loud Room", genre: "Rock Block", rating: "TV-14",
-    style: "music", palette: ["#1A0E0E", "#E23B3B", "#F5D442"],
-    tagline: "Neighbors were notified.",
-    episodes: [
-      { title: "Late Loud", synopsis: "The amplifier hours.", scenes: [
-        "The Loud Room is now open. Mind the volume knob.",
-        "Tonight's videos contain 300% more pyrotechnics.",
-        "Our director of safety has resigned. The show goes on." ] }
-    ]
+    id: "music-rhyme-relay", title: "Rhyme Relay", genre: "Hip-Hop and Pop Rap", rating: "TV-PG",
+    style: "music", palette: ["#161616", "#FFB000", "#DDE8E5"],
+    tagline: "Clean crossover cuts passed from coast to coast.",
+    mediaPool: ["music-rhyme-relay-outkast-hey-ya", "music-rhyme-relay-bep-where-is-love"],
+    episodes: [{ title: "Standby", synopsis: "Broadcast-friendly hip-hop and genre-crossing video hits.", scenes: [
+      "A digital mixtape clicks into place.", "The relay passes to the next city." ] }]
   },
   {
-    id: "dance-transmission", title: "Transmission", genre: "Dance / Electronic", rating: "TV-PG",
-    style: "latenight", palette: ["#0A1030", "#63E2C6", "#FF4FA0"],
-    tagline: "Signals for the small hours.",
-    mediaPool: ["mv-believe"],
-    episodes: [
-      { title: "Night Transmission", synopsis: "Dance videos into the dark.", scenes: [
-        "Transmission begins. The strobe is contractually required.",
-        "This hour is legally considered cardio.",
-        "The sun is a few songs away. Keep moving." ] }
-    ]
+    id: "music-guitar-voltage", title: "Guitar Voltage", genre: "Alternative and Rock", rating: "TV-PG",
+    style: "music", palette: ["#111318", "#E23B3B", "#F5F0E6"],
+    tagline: "Distortion, hooks, and the videos that filled every after-school notebook.",
+    mediaPool: ["music-guitar-voltage-linkin-in-the-end", "music-guitar-voltage-evanescence-bring-me-life",
+      "music-guitar-voltage-white-stripes-seven-nation-army"],
+    episodes: [{ title: "Standby", synopsis: "Alternative and rock breakthroughs from the early-2000s surge.", scenes: [
+      "Amplifier meters climb into the red.", "A guitar cable draws the next title across the screen." ] }]
   },
   {
-    id: "acoustic-couch", title: "The Acoustic Couch", genre: "Sessions & Interviews", rating: "TV-G",
-    style: "sitcom", palette: ["#3A2A1A", "#C4A46B", "#F5F0E6"],
-    tagline: "Plugged out, mic'd up.",
-    episodes: [
-      { title: "Couch Session", synopsis: "Stripped-down performances and long answers.", scenes: [
-        "Welcome back to the Couch. Shoes optional.",
-        "Our guest tunes their guitar for a comfortable while.",
-        "'So, this next song is about my landlord.'",
-        "The unplugged version is somehow louder. Emotionally." ] }
-    ]
+    id: "music-neon-frequency", title: "Neon Frequency", genre: "Dance and Electronic", rating: "TV-PG",
+    style: "music", palette: ["#08051D", "#8C5BFF", "#32F5C8"],
+    tagline: "Electronic crossover videos after the city lights come on.",
+    mediaPool: ["music-neon-frequency-daft-punk-one-more-time", "music-neon-frequency-modjo-lady",
+      ],
+    episodes: [{ title: "Standby", synopsis: "Turn-of-the-millennium house and electronic crossover videos.", scenes: [
+      "Laser lines trace a midnight skyline.", "The beat grid searches for the next transmission." ] }]
+  },
+  {
+    id: "music-bare-wire-sessions", title: "Bare Wire Sessions", genre: "Acoustic Sessions", rating: "TV-PG",
+    style: "music", palette: ["#251C17", "#D0A66A", "#F6E9D3"],
+    tagline: "Stools, strings, room tone, and nothing to hide behind.",
+    episodes: [{ title: "Standby", synopsis: "A procedural acoustic-stage block (no sourced sessions cleared to standard).", scenes: [
+      "A stagehand places one microphone beneath a warm spotlight.", "An acoustic guitar is tuned while the room settles." ] }]
+  },
+  {
+    id: "music-weekend-twenty", title: "Weekend Twenty", genre: "Weekly Video Countdown", rating: "TV-PG",
+    style: "music", palette: ["#13213B", "#39D8D0", "#FFCF4D"],
+    tagline: "The week's biggest signals, counted down every weekend.",
+    mediaPool: ["music-pop-prism-britney-oops", "music-pop-prism-avril-complicated", "music-pop-prism-nelly-bird",
+      "music-pop-prism-vanessa-thousand-miles", "music-soul-circuit-alicia-fallin",
+      "music-soul-circuit-destinys-child-survivor", "music-soul-circuit-mario-let-me-love-you",
+      "music-rhyme-relay-outkast-hey-ya", "music-rhyme-relay-bep-where-is-love",
+      "music-guitar-voltage-linkin-in-the-end", "music-guitar-voltage-evanescence-bring-me-life",
+      "music-guitar-voltage-white-stripes-seven-nation-army", "music-neon-frequency-daft-punk-one-more-time",
+      "music-neon-frequency-modjo-lady"],
+    episodes: [{ title: "Standby", synopsis: "A weekend chart assembled from the channel's current eligible video pool.", scenes: [
+      "Twenty numbered cards fan across the screen.", "This week's chart begins its climb toward number one." ] }]
   },
 
   // ---------- FAMILY 31 ----------

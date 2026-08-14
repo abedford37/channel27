@@ -1,66 +1,63 @@
-// ============================================================
-// MUSIC 30 — WEEKLY SCHEDULE
-// ============================================================
-// Programming rhythm informed by archived listings for music
-// video networks circa 1997-1999 (MTV/VH1/The Box-era pattern:
-// video rotation through the morning, an afternoon
-// request-driven countdown in the TRL manner, genre blocks in
-// the evening — R&B, hip-hop, alternative, rock — dance and
-// electronic programming late, and unplugged-style sessions on
-// weekends). This is a synthesized homage, not a reproduced
-// network schedule. All program titles are original.
-//
-// Several programs carry mediaPools of officially uploaded
-// era-appropriate music videos (see content/media.js).
-// ============================================================
+/*
+  CHANNEL 30 - MUSIC
+  Original synthesized schedule; no legacy network or program branding reproduced.
+  All Channel 30 program names are original.
+
+  Historical grounding:
+  - Weekday afternoon request-countdown pattern (TRL-era, ~3:30-5:00 PM):
+    https://www.forbes.com/2007/02/15/mtv-trl-viacom-tech-media-cx_lh_0215mtv.html
+  - Weekend video countdown expanding to twenty videos (2001):
+    https://en.wikipedia.org/wiki/VH1_Top_20_Video_Countdown
+  - Weekend/late-evening acoustic sessions (2001-2002 archives):
+    https://www.fernsehserien.de/mtv-unplugged/sendetermine/mtv/-1
+
+  Rhythm: morning rotation, a 15:30 weekday request countdown, rotating evening
+  genre blocks, electronic after 23:00, weekend countdown and acoustic sessions.
+*/
 
 window.C27 = window.C27 || {};
 window.C27.SCHEDULES = window.C27.SCHEDULES || {};
 
-(function () {
-  const weekday = [
-    ["00:00", "dance-transmission"],   // late-night dance
-    ["03:00", "wake-up-videos"],       // overnight rotation into morning
-    ["06:00", "wake-up-videos"],       // the morning wake-up block
-    ["10:00", "the-request-line"],     // late-morning countdown warmup
-    ["12:00", "wake-up-videos"],       // midday rotation
-    ["15:00", "the-request-line"],     // THE after-school countdown
-    ["17:00", "rnb-avenue"],
-    ["19:00", "beats-and-rhymes"],
-    ["21:00", "left-of-the-dial"],
-    ["22:00", "the-loud-room"],
-    ["23:00", "dance-transmission"]
-  ];
-
-  window.C27.SCHEDULES["music-30"] = {
-    mon: weekday.map(e => e.slice()),
-    tue: weekday.map(e => e.slice()),
-    wed: weekday.map(e => e.slice()),
-    thu: weekday.map(e => e.slice()),
-    fri: weekday.map(e => e.slice()),
-
-    sat: [
-      ["00:00", "dance-transmission"],   // Saturday club hours run long
-      ["04:00", "wake-up-videos"],
-      ["09:00", "the-request-line"],     // weekend countdown marathon
-      ["12:00", "acoustic-couch"],       // sessions & interviews
-      ["14:00", "left-of-the-dial"],
-      ["16:00", "the-request-line"],
-      ["18:00", "beats-and-rhymes"],
-      ["20:00", "the-loud-room"],
-      ["22:00", "dance-transmission"]
-    ],
-
-    sun: [
-      ["00:00", "dance-transmission"],
-      ["04:00", "wake-up-videos"],
-      ["09:00", "acoustic-couch"],       // slow Sunday sessions
-      ["12:00", "rnb-avenue"],
-      ["14:00", "the-request-line"],     // week-in-review countdown
-      ["17:00", "acoustic-couch"],
-      ["19:00", "left-of-the-dial"],
-      ["21:00", "rnb-avenue"],
-      ["23:00", "dance-transmission"]
-    ]
-  };
-})();
+window.C27.SCHEDULES["music-30"] = {
+  mon: [
+    ["00:00", "music-neon-frequency"], ["02:00", "music-full-spectrum"], ["06:00", "music-sunrise-rotation"],
+    ["10:00", "music-full-spectrum"], ["13:00", "music-pop-prism"], ["15:30", "music-request-line-ten"],
+    ["17:00", "music-soul-circuit"], ["19:00", "music-rhyme-relay"], ["21:00", "music-guitar-voltage"],
+    ["23:00", "music-neon-frequency"]
+  ],
+  tue: [
+    ["00:00", "music-neon-frequency"], ["02:00", "music-full-spectrum"], ["06:00", "music-sunrise-rotation"],
+    ["10:00", "music-full-spectrum"], ["13:00", "music-soul-circuit"], ["15:30", "music-request-line-ten"],
+    ["17:00", "music-pop-prism"], ["19:00", "music-guitar-voltage"], ["21:00", "music-soul-circuit"],
+    ["23:00", "music-neon-frequency"]
+  ],
+  wed: [
+    ["00:00", "music-neon-frequency"], ["02:00", "music-full-spectrum"], ["06:00", "music-sunrise-rotation"],
+    ["10:00", "music-full-spectrum"], ["13:00", "music-rhyme-relay"], ["15:30", "music-request-line-ten"],
+    ["17:00", "music-soul-circuit"], ["19:00", "music-rhyme-relay"], ["21:00", "music-guitar-voltage"],
+    ["23:00", "music-neon-frequency"]
+  ],
+  thu: [
+    ["00:00", "music-neon-frequency"], ["02:00", "music-full-spectrum"], ["06:00", "music-sunrise-rotation"],
+    ["10:00", "music-full-spectrum"], ["13:00", "music-guitar-voltage"], ["15:30", "music-request-line-ten"],
+    ["17:00", "music-pop-prism"], ["19:00", "music-soul-circuit"], ["21:00", "music-guitar-voltage"],
+    ["23:00", "music-neon-frequency"]
+  ],
+  fri: [
+    ["00:00", "music-neon-frequency"], ["02:00", "music-full-spectrum"], ["06:00", "music-sunrise-rotation"],
+    ["10:00", "music-full-spectrum"], ["13:00", "music-pop-prism"], ["15:30", "music-request-line-ten"],
+    ["17:00", "music-full-spectrum"], ["20:00", "music-guitar-voltage"], ["22:00", "music-neon-frequency"]
+  ],
+  sat: [
+    ["00:00", "music-neon-frequency"], ["03:00", "music-full-spectrum"], ["06:00", "music-sunrise-rotation"],
+    ["09:00", "music-weekend-twenty"], ["12:00", "music-bare-wire-sessions"], ["14:00", "music-full-spectrum"],
+    ["16:00", "music-request-line-ten"], ["18:00", "music-pop-prism"], ["20:00", "music-guitar-voltage"],
+    ["22:00", "music-neon-frequency"]
+  ],
+  sun: [
+    ["00:00", "music-neon-frequency"], ["03:00", "music-full-spectrum"], ["07:00", "music-sunrise-rotation"],
+    ["09:00", "music-bare-wire-sessions"], ["11:00", "music-weekend-twenty"], ["14:00", "music-soul-circuit"],
+    ["16:00", "music-rhyme-relay"], ["18:00", "music-full-spectrum"], ["20:00", "music-guitar-voltage"],
+    ["22:00", "music-neon-frequency"]
+  ]
+};

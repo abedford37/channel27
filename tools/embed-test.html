@@ -46,7 +46,7 @@
 </head>
 <body>
 <header>
-  <h1>CHANNEL <span>27</span> — Embed Test · Channel 29 candidates</h1>
+  <h1>CHANNEL <span>27</span> — Embed Test · Channel 30 candidates</h1>
   <p class="lede">Each tile embeds a candidate the way the site would. Plays = embeddable, set <code style="color:var(--gold)">active: true</code>. "Video unavailable" = owner blocked it, leave inactive. Also confirm each tile is the <em>right clip</em> — several of these IDs were unconfirmable on spot-check.</p>
 </header>
 
@@ -78,19 +78,20 @@
   // Channel 29 candidates + the 4 previously-untested Fleischer records.
   // Edit this array to test other channels.
   var VIDEOS = [
-    { record: "toon-poor-cinderella",      program: "Inkwell A.M.",     title: "Poor Cinderella (1934)",              id: "ajwu5RIvD-Q" },
-    { record: "toon-minnie-the-moocher",   program: "Inkwell A.M.",     title: "Minnie the Moocher (1932)",           id: "BM8uUd857k8" },
-    { record: "toon-balloon-land",         program: "Inkwell A.M.",     title: "Balloon Land (1935)",                 id: "lObPSQvCuV8" },
-    { record: "toon-headless-horseman",    program: "Inkwell A.M.",     title: "The Headless Horseman (1934)",        id: "RZ949PoJuEw" },
-    { record: "pd-superman-1941",          program: "Inkwell A.M.",     title: "Superman: The Mad Scientist (1941)",  id: "4zTK7hI-T64" },
-    { record: "pd-superman-1941-alt",      program: "Inkwell A.M.",     title: "Superman (1941, restored)",           id: "xG9iin9oy1M" },
-    { record: "pd-popeye-sindbad",         program: "Inkwell A.M.",     title: "Popeye Meets Sindbad (1936)",         id: "39AxDJT3sdo" },
-    { record: "pd-popeye-sindbad-alt",     program: "Inkwell A.M.",     title: "Popeye Meets Sindbad (35mm)",         id: "iGkymewRYnw" },
-    { record: "toon-yugioh-opening-s1",    program: "Passport Frames",  title: "Yu-Gi-Oh! S1 Opening (2001)",         id: "Cb3ggoyqXmU" },
-    { record: "toon-strong-bad-techno",    program: "Midnight Cel Lab", title: "Strong Bad #45: Techno (2002)",       id: "JwZwkk7q25I" },
-    { record: "toon-swing-you-sinners",    program: "Midnight Cel Lab", title: "Swing You Sinners! (1930)",           id: "VNttqN1wUMY" },
-    { record: "toon-happy-tree-spin",      program: "Midnight Cel Lab", title: "Happy Tree Friends (2000)",           id: "Vsscl6myXqI", flag: "graphic gore" },
-    { record: "toon-salad-fingers-spoons", program: "Sleepwalk Studio", title: "Salad Fingers 1: Spoons (2004)",      id: "OWBFKL6H7rI", flag: "disturbing" }
+    { record: "music-pop-prism-britney-oops",                 program: "Pop Prism",      title: "Britney Spears - Oops!...I Did It Again", id: "CduA0TULnow" },
+    { record: "music-pop-prism-avril-complicated",            program: "Pop Prism",      title: "Avril Lavigne - Complicated",             id: "5NPBIwQyPWE" },
+    { record: "music-pop-prism-nelly-bird",                   program: "Pop Prism",      title: "Nelly Furtado - I'm Like a Bird",         id: "roPQ_M3yJTA" },
+    { record: "music-pop-prism-vanessa-thousand-miles",       program: "Pop Prism",      title: "Vanessa Carlton - A Thousand Miles",      id: "Cwkej79U3ek" },
+    { record: "music-soul-circuit-alicia-fallin",             program: "Soul Circuit",   title: "Alicia Keys - Fallin'",                   id: "Urdlvw0SSEc", flag: "prison-visit narrative" },
+    { record: "music-soul-circuit-destinys-child-survivor",   program: "Soul Circuit",   title: "Destiny's Child - Survivor",              id: "Wmc8bQoL-J0", flag: "swimwear" },
+    { record: "music-soul-circuit-mario-let-me-love-you",     program: "Soul Circuit",   title: "Mario - Let Me Love You",                 id: "H64QG4UsrGI" },
+    { record: "music-rhyme-relay-outkast-hey-ya",             program: "Rhyme Relay",    title: "Outkast - Hey Ya!",                       id: "PWgvGjAhvIw" },
+    { record: "music-rhyme-relay-bep-where-is-love",          program: "Rhyme Relay",    title: "Black Eyed Peas - Where Is the Love?",    id: "WpYeekQkAdc", flag: "news/conflict imagery" },
+    { record: "music-guitar-voltage-linkin-in-the-end",       program: "Guitar Voltage", title: "Linkin Park - In the End",                id: "eVTXPUF4Oz4" },
+    { record: "music-guitar-voltage-evanescence-bring-me-life", program: "Guitar Voltage", title: "Evanescence - Bring Me to Life",        id: "3YxaaGgTQYM", flag: "rooftop peril / fall" },
+    { record: "music-guitar-voltage-white-stripes-seven-nation-army", program: "Guitar Voltage", title: "White Stripes - Seven Nation Army", id: "0J2QdDbelmY" },
+    { record: "music-neon-frequency-daft-punk-one-more-time", program: "Neon Frequency", title: "Daft Punk - One More Time",               id: "FGBhQbmPwH8" },
+    { record: "music-neon-frequency-modjo-lady",              program: "Neon Frequency", title: "Modjo - Lady (Hear Me Tonight)",          id: "mMfxI3r_LyA" },
   ];
 
   (function () {
