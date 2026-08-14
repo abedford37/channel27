@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Required so YouTube receives a valid referrer; without it embeds fail
-     with "Error 153: Video player configuration error". Only effective when
-     this page is SERVED over http(s) — see the banner below. -->
+     with "Error 153". Only effective when this page is SERVED over http(s). -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Channel 27 — Embed Test</title>
 <style>
@@ -32,6 +31,7 @@
   .meta { padding:.8rem 1rem 1rem; }
   .prog { font-weight:700; }
   .ep { color:var(--dim); font-size:.9rem; margin:.15rem 0 .5rem; }
+  .flag { display:inline-block; font-size:.78rem; color:#f3d9a8; background:rgba(232,163,58,.14); border:1px solid var(--warn); border-radius:5px; padding:.05em .5em; margin:0 0 .5rem; }
   .row { display:flex; align-items:center; justify-content:space-between; gap:.6rem; font-size:.85rem; }
   .vid { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; color:var(--dim); }
   a.watch { color:var(--gold); text-decoration:none; white-space:nowrap; }
@@ -46,30 +46,27 @@
 </head>
 <body>
 <header>
-  <h1>CHANNEL <span>27</span> — Embed Test</h1>
-  <p class="lede">Each tile embeds a candidate YouTube video the way the site would. If it plays, it embeds — set that record to <code style="color:var(--gold)">active: true</code>. If it shows "Video unavailable / Watch on YouTube," the owner blocked embedding — leave it inactive and the procedural cartoon covers it.</p>
+  <h1>CHANNEL <span>27</span> — Embed Test · Channel 29 candidates</h1>
+  <p class="lede">Each tile embeds a candidate the way the site would. Plays = embeddable, set <code style="color:var(--gold)">active: true</code>. "Video unavailable" = owner blocked it, leave inactive. Also confirm each tile is the <em>right clip</em> — several of these IDs were unconfirmable on spot-check.</p>
 </header>
 
 <div class="banner">
-  <b>⚠ Serve this page over http(s) — do not open it from <code>file://</code>.</b>
-  A file:// page sends no origin, so YouTube rejects every embed with
-  <b>Error 153 (video player configuration error)</b> — which looks like the videos are
-  blocked when they aren't. Run <code>python -m http.server</code> in the project root and
-  open <code>http://localhost:8000/tools/embed-test.html</code>, or view this on your
-  GitHub Pages deploy. If you see 153 on <i>every</i> tile, that's the origin, not the videos.
+  <b>⚠ Serve this over http(s) — not <code>file://</code>.</b>
+  A file:// page sends no origin, so every tile shows <b>Error 153</b> even when the videos are fine.
+  Run <code>python -m http.server</code> and open <code>http://localhost:8000/tools/embed-test.html</code>,
+  or view it on GitHub Pages. If <i>every</i> tile is 153, that's the origin, not the videos.
 </div>
 <div id="origin"></div>
 
 <div class="how">
   <details open>
-    <summary>How to read the results</summary>
+    <summary>How to read it</summary>
     <ul>
-      <li><strong>Plays / shows a play button</strong> &rarr; embeddable. Mark Pass.</li>
-      <li><strong>"Video unavailable" / "Watch on YouTube"</strong> &rarr; the owner disabled embedding for that specific video. Mark Fail; leave <code>active: false</code>.</li>
-      <li><strong>"Error 153" on every tile</strong> &rarr; you're on file:// or a referrer-stripping context. Not a verdict on the videos &mdash; serve the page and reload.</li>
-      <li><strong>Confirm it's the right clip</strong> &mdash; a valid ID pointing at the wrong video is still wrong.</li>
-      <li>When done, flip only the winners to <code>active: true</code> in <code>content/media.js</code>.</li>
-      <li>Reusable for other channels: edit the <code>VIDEOS</code> array at the bottom of this file.</li>
+      <li><strong>Plays</strong> &rarr; embeddable. Mark Pass, set <code>active: true</code> in <code>content/media.js</code>.</li>
+      <li><strong>"Video unavailable / Watch on YouTube"</strong> &rarr; embedding disabled. Mark Fail, leave inactive.</li>
+      <li><strong>Wrong clip, or "Error 153" everywhere</strong> &rarr; don't trust it. Fix the origin / find the right upload.</li>
+      <li>The four <strong>Fleischer</strong> records shipped active but were never actually tested &mdash; verify them here too.</li>
+      <li>Cards flagged <span class="flag">mature</span> contain graphic or disturbing content &mdash; a deliberate choice for the late-night block, your call.</li>
     </ul>
   </details>
 </div>
@@ -78,19 +75,26 @@
 <div id="summary"></div>
 
 <script>
-  // Edit this list to test other channels. id = the YouTube video id.
-  const VIDEOS = [
-    { record: "orange-double-dare-classic",          program: "Saturday Mess",   title: "Double Dare OFFICIAL Classic Full Episode", id: "XEZCY95JliY" },
-    { record: "orange-rugrats-imaginary-adventures", program: "Early Toons",     title: "Rugrats Imaginary Adventures & Play Time",  id: "ky9HCmmxc00" },
-    { record: "orange-rugrats-find-reptar",          program: "Lunchbox Toons",  title: "Rugrats Fight a Robot & Find Reptar",       id: "ifvSjE1I5pE" },
-    { record: "orange-rugrats-babies-drive",         program: "Lunchbox Toons",  title: "Rugrats Babies Drive Cars",                 id: "uYMw4bCvY8I" },
-    { record: "orange-rugrats-outer-space",          program: "Prime Pop",       title: "Tommy Finds Reptar In Outer Space",         id: "WrKvjYarIX8" },
-    { record: "orange-rugrats-pet-rescues",          program: "Sunday Couch",    title: "Rugrats Best Pet Rescues",                  id: "SE5k0bGxd-Y" }
+  // Channel 29 candidates + the 4 previously-untested Fleischer records.
+  // Edit this array to test other channels.
+  var VIDEOS = [
+    { record: "toon-poor-cinderella",      program: "Inkwell A.M.",     title: "Poor Cinderella (1934)",              id: "ajwu5RIvD-Q" },
+    { record: "toon-minnie-the-moocher",   program: "Inkwell A.M.",     title: "Minnie the Moocher (1932)",           id: "BM8uUd857k8" },
+    { record: "toon-balloon-land",         program: "Inkwell A.M.",     title: "Balloon Land (1935)",                 id: "lObPSQvCuV8" },
+    { record: "toon-headless-horseman",    program: "Inkwell A.M.",     title: "The Headless Horseman (1934)",        id: "RZ949PoJuEw" },
+    { record: "pd-superman-1941",          program: "Inkwell A.M.",     title: "Superman: The Mad Scientist (1941)",  id: "4zTK7hI-T64" },
+    { record: "pd-superman-1941-alt",      program: "Inkwell A.M.",     title: "Superman (1941, restored)",           id: "xG9iin9oy1M" },
+    { record: "pd-popeye-sindbad",         program: "Inkwell A.M.",     title: "Popeye Meets Sindbad (1936)",         id: "39AxDJT3sdo" },
+    { record: "pd-popeye-sindbad-alt",     program: "Inkwell A.M.",     title: "Popeye Meets Sindbad (35mm)",         id: "iGkymewRYnw" },
+    { record: "toon-yugioh-opening-s1",    program: "Passport Frames",  title: "Yu-Gi-Oh! S1 Opening (2001)",         id: "Cb3ggoyqXmU" },
+    { record: "toon-strong-bad-techno",    program: "Midnight Cel Lab", title: "Strong Bad #45: Techno (2002)",       id: "JwZwkk7q25I" },
+    { record: "toon-swing-you-sinners",    program: "Midnight Cel Lab", title: "Swing You Sinners! (1930)",           id: "VNttqN1wUMY" },
+    { record: "toon-happy-tree-spin",      program: "Midnight Cel Lab", title: "Happy Tree Friends (2000)",           id: "Vsscl6myXqI", flag: "graphic gore" },
+    { record: "toon-salad-fingers-spoons", program: "Sleepwalk Studio", title: "Salad Fingers 1: Spoons (2004)",      id: "OWBFKL6H7rI", flag: "disturbing" }
   ];
 
-  // Warn right in the page if opened from file://
   (function () {
-    const o = document.getElementById("origin");
+    var o = document.getElementById("origin");
     if (!/^https?:$/.test(location.protocol)) {
       o.innerHTML = 'Current origin: <code style="color:var(--bad)">' + location.protocol + '//</code> &mdash; not http(s). Expect Error 153 on every tile until you serve the page.';
     } else {
@@ -98,12 +102,13 @@
     }
   })();
 
-  const results = {};
-  const grid = document.getElementById("grid");
+  var results = {};
+  var grid = document.getElementById("grid");
 
   VIDEOS.forEach(function (v) {
-    const card = document.createElement("div");
+    var card = document.createElement("div");
     card.className = "card";
+    var flagHtml = v.flag ? '<div><span class="flag">⚠ ' + v.flag + '</span></div>' : '';
     card.innerHTML =
       '<div class="frame">' +
         '<iframe src="https://www.youtube-nocookie.com/embed/' + v.id + '?rel=0&modestbranding=1" ' +
@@ -114,6 +119,7 @@
       '<div class="meta">' +
         '<div class="prog">' + v.program + '</div>' +
         '<div class="ep">' + v.title + '</div>' +
+        flagHtml +
         '<div class="row">' +
           '<span class="vid">' + v.id + '</span>' +
           '<a class="watch" href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener">Open on YouTube &#8599;</a>' +
@@ -127,10 +133,10 @@
   });
 
   grid.addEventListener("click", function (e) {
-    const btn = e.target.closest("button");
+    var btn = e.target.closest("button");
     if (!btn) return;
     results[btn.dataset.r] = btn.dataset.v;
-    const card = btn.closest(".card");
+    var card = btn.closest(".card");
     card.querySelectorAll(".verdict button").forEach(function (b) {
       b.classList.toggle("sel", b.dataset.v === btn.dataset.v);
     });
@@ -138,9 +144,9 @@
   });
 
   function renderSummary() {
-    const pass = Object.entries(results).filter(function (e) { return e[1] === "pass"; }).map(function (e) { return e[0]; });
-    const fail = Object.entries(results).filter(function (e) { return e[1] === "fail"; }).map(function (e) { return e[0]; });
-    const s = document.getElementById("summary");
+    var pass = Object.keys(results).filter(function (k) { return results[k] === "pass"; });
+    var fail = Object.keys(results).filter(function (k) { return results[k] === "fail"; });
+    var s = document.getElementById("summary");
     s.innerHTML =
       '<p><strong>Set these to <code>active: true</code>:</strong> ' +
       (pass.length ? pass.join(", ") : "(none marked yet)") + '</p>' +

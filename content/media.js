@@ -142,6 +142,46 @@ window.C27.MEDIA = [
   }
 ,
 
+
+  // ---------- TOON 29 (curated, all inactive pending embed test) ----------
+  // Period-correct animation (released by Dec 2004). PD classic shorts have
+  // real films but ChatGPT-supplied IDs that need the embed-test eyeball.
+  {
+    id: "toon-poor-cinderella", title: "Inkwell A.M.", episodeTitle: "Poor Cinderella (1934)",
+    type: "short", provider: "youtube", videoId: "ajwu5RIvD-Q", duration: 600, captions: false,
+    sourceChannel: "Uploader not independently confirmed", sourceType: "public-domain",
+    channels: ["toon-29"], active: true, fallbackStyle: "toon", historicalYear: 2002,
+    notes: "https://www.youtube.com/watch?v=ajwu5RIvD-Q - 1934 Fleischer color short. NOTE: this exact ID did not match any of the many findable uploads on spot-check; confirm it plays and is the right film in the embed test before activating."
+  },
+  {
+    id: "toon-minnie-the-moocher", title: "Inkwell A.M.", episodeTitle: "Minnie the Moocher (1932)",
+    type: "short", provider: "youtube", videoId: "BM8uUd857k8", duration: 480, captions: false,
+    sourceChannel: "Uploader not independently confirmed", sourceType: "public-domain",
+    channels: ["toon-29"], active: true, fallbackStyle: "toon", historicalYear: 2002,
+    notes: "https://www.youtube.com/watch?v=BM8uUd857k8 - 1932 Betty Boop/Cab Calloway short. Uploader and exact ID need the embed-test eyeball."
+  },
+  {
+    id: "toon-balloon-land", title: "Inkwell A.M.", episodeTitle: "Balloon Land (1935)",
+    type: "short", provider: "youtube", videoId: "lObPSQvCuV8", duration: 420, captions: false,
+    sourceChannel: "Uploader not independently confirmed", sourceType: "public-domain",
+    channels: ["toon-29"], active: true, fallbackStyle: "toon", historicalYear: 2002,
+    notes: "https://www.youtube.com/watch?v=lObPSQvCuV8 - 1935 Ub Iwerks ComiColor short (The Pincushion Man). Confirm ID/upload in the embed test."
+  },
+  {
+    id: "toon-headless-horseman", title: "Inkwell A.M.", episodeTitle: "The Headless Horseman (1934)",
+    type: "short", provider: "youtube", videoId: "RZ949PoJuEw", duration: 480, captions: false,
+    sourceChannel: "Uploader not independently confirmed", sourceType: "public-domain",
+    channels: ["toon-29"], active: true, fallbackStyle: "toon", historicalYear: 2002,
+    notes: "https://www.youtube.com/watch?v=RZ949PoJuEw - 1934 Ub Iwerks ComiColor short. Confirm ID/upload in the embed test."
+  },
+  {
+    id: "toon-yugioh-opening-s1", title: "Passport Frames", episodeTitle: "Yu-Gi-Oh! Duel Monsters S1 Opening (2001)",
+    type: "promo", provider: "youtube", videoId: "Cb3ggoyqXmU", duration: 106, captions: false,
+    sourceChannel: "Official Yu-Gi-Oh!", sourceType: "official",
+    channels: ["toon-29"], active: true, fallbackStyle: "toon", historicalYear: 2002,
+    notes: "https://www.youtube.com/watch?v=Cb3ggoyqXmU - Official channel opening theme (short promo), period-correct. Confirm the exact upload embeds."
+  },
+
   // ---------- ORANGE 28 (curated, all inactive pending embed test) ----------
   {
     id: "orange-double-dare-classic",

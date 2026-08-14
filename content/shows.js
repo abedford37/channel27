@@ -1082,95 +1082,109 @@ window.C27.SHOWS = [
 
   // ---------- TOON 29 (animation) ----------
   {
-    id: "golden-age-theater", title: "Golden Age Theater", genre: "Classic Animation", rating: "TV-G",
-    style: "toon", palette: ["#3A2A1A", "#E23B3B", "#F5F0E6"],
-    tagline: "Theatrical shorts from the vault.",
-    mediaPool: ["pd-superman-1941", "pd-superman-1941-alt", "pd-popeye-sindbad", "pd-popeye-sindbad-alt"],
+    id: "toon-inkwell-am", title: "Inkwell A.M.", genre: "Classic Theatrical Animation", rating: "TV-G",
+    style: "toon", palette: ["#171717", "#E44A37", "#F3E6C8"],
+    tagline: "Before breakfast, every shadow has a rubber-hose rhythm.",
+    mediaPool: ["toon-poor-cinderella", "toon-minnie-the-moocher", "toon-balloon-land", "toon-headless-horseman",
+      "pd-superman-1941", "pd-superman-1941-alt", "pd-popeye-sindbad", "pd-popeye-sindbad-alt"],
     episodes: [
-      { title: "From the Vault", synopsis: "Restored theatrical animation from the public domain.", scenes: [
-        "The projector is warming up. Genuinely, it needs a minute.",
-        "These drawings are older than your grandparents' couch.",
-        "Public domain: the vault anyone can open.",
-        "Please enjoy the orchestra. It is enthusiastic." ] }
+      { title: "Standby", synopsis: "Original monochrome mischief fills the gaps between sourced theatrical shorts.", scenes: [
+        "An ink bottle rattles beside a ticking alarm clock.",
+        "A paper moon sneezes stars across the studio floor." ] }
     ]
   },
   {
-    id: "lunch-toons", title: "Lunch Toons", genre: "Cartoon", rating: "TV-Y7",
-    style: "toon", palette: ["#E23B3B", "#F5B82E", "#111318"],
-    tagline: "Cartoons you can eat a sandwich to.",
+    id: "toon-breakfast-flicker", title: "Breakfast Flicker", genre: "Classic Cartoon Comedy", rating: "TV-G",
+    style: "toon", palette: ["#202834", "#F4B63A", "#F7EED7"],
+    tagline: "Fast gags, hot toast, and one more chase before school.",
+    mediaPool: ["toon-balloon-land", "toon-poor-cinderella", "toon-headless-horseman"],
     episodes: [
-      { title: "Midday Reel", synopsis: "A noon block of comedy shorts.", scenes: [
-        "It is lunch. The cartoons know it is lunch.",
-        "Every character in this block is chasing a sandwich.",
-        "Chew carefully during the slapstick. We mean it." ] }
+      { title: "Standby", synopsis: "Procedural theatrical-style shorts bridge the early-morning rotation.", scenes: [
+        "A toaster launches breakfast through a painted skylight.",
+        "The studio rooster discovers that sunrise has a pull cord." ] }
     ]
   },
   {
-    id: "after-school-scribbles", title: "After-School Scribbles", genre: "Cartoon", rating: "TV-Y7",
-    style: "toon", palette: ["#F5B82E", "#E23B3B", "#2A6B4F"],
-    tagline: "Homework can wait twenty-two minutes.",
+    id: "toon-lunchbox-loop", title: "Lunchbox Loop", genre: "Daytime Cartoon Variety", rating: "TV-Y7",
+    style: "toon", palette: ["#183B45", "#F2C14E", "#EAF4F4"],
+    tagline: "Small problems, enormous sandwiches, and recess-level stakes.",
     episodes: [
-      { title: "Scribbles Reel A", synopsis: "Backpacks off, volume up.", scenes: [
-        "You made it home. The couch missed you.",
-        "This block is drawn entirely in gel pen. Allegedly.",
-        "The snack you are holding is canonical.",
-        "One more episode before homework. It's tradition." ] },
-      { title: "Scribbles Reel B", synopsis: "The louder half of the afternoon.", scenes: [
-        "Our characters have too much energy and one plan.",
-        "The plan is bad. The execution is worse. It's great.",
-        "Do not attempt any of this on your bike." ] }
+      { title: "Standby", synopsis: "An original rotating ensemble handles school-day cartoon calamities.", scenes: [
+        "A runaway lunchbox catches the crosstown bus.",
+        "The cafeteria clock quietly skips the final five minutes." ] }
     ]
   },
   {
-    id: "action-block-29", title: "Voltage Block", genre: "Action Animation", rating: "TV-Y7",
-    style: "space", palette: ["#0E1030", "#E23B3B", "#63B4E2"],
-    tagline: "Heroes, robots, dramatic wind.",
+    id: "toon-recess-rocket", title: "Recess Rocket", genre: "After-School Comedy Adventure", rating: "TV-Y7",
+    style: "toon", palette: ["#17213A", "#F15B3A", "#F6E8B1"],
+    tagline: "The last bell rings and the whole neighborhood accelerates.",
     episodes: [
-      { title: "Voltage Hour I", synopsis: "Evening action animation, capes mandatory.", scenes: [
-        "Tonight: a city in peril, a teenager with a destiny.",
-        "The transformation sequence is 40 seconds. Respect it.",
-        "The villain monologues. The hero charges. Classic.",
-        "The city is saved until approximately tomorrow." ] },
-      { title: "Voltage Hour II", synopsis: "The robot one.", scenes: [
-        "The hangar doors open very, very slowly. On purpose.",
-        "Pilot and machine must learn to trust each other.",
-        "The finishing move has its own theme song." ] }
+      { title: "Standby", synopsis: "Bright procedural action-comedy takes over the after-school hour.", scenes: [
+        "A skateboard trail turns into a hand-drawn speed line.",
+        "Three friends race a delivery robot through the corner arcade." ] }
     ]
   },
   {
-    id: "big-robot-hour", title: "Big Robot Hour", genre: "Imported Animation", rating: "TV-PG",
-    style: "space", palette: ["#0B0B2A", "#E23B3B", "#F5F0E6"],
-    tagline: "Subtitled feelings, giant machines.",
+    id: "toon-hero-switchyard", title: "Hero Switchyard", genre: "Action and Superhero Animation", rating: "TV-Y7-FV",
+    style: "toon", palette: ["#101B2E", "#D83A3A", "#F0C94A"],
+    tagline: "Every track leads to trouble; every signal calls a hero.",
     episodes: [
-      { title: "Night Broadcast", synopsis: "The late imported block.", scenes: [
-        "The night block begins. Headphones recommended.",
-        "Tonight's episode contains rain, neon, and a promise.",
-        "Two rivals stare at each other for a full minute.",
-        "To be continued. It is ALWAYS to be continued." ] }
+      { title: "Standby", synopsis: "Original serial heroes defend a city assembled from rails, antennas, and rooftops.", scenes: [
+        "A warning beacon ignites above the elevated train.",
+        "The night dispatcher reroutes a hero directly toward the disturbance." ] }
     ]
   },
   {
-    id: "insomniac-ink", title: "Insomniac Ink", genre: "Experimental Animation", rating: "TV-14",
-    style: "latenight", palette: ["#111318", "#E23B3B", "#8A7BC4"],
-    tagline: "The drawings get strange after midnight.",
+    id: "toon-passport-frames", title: "Passport Frames", genre: "Imported Animation Sampler", rating: "TV-Y7-FV",
+    style: "toon", palette: ["#171631", "#D9477D", "#F4D35E"],
+    tagline: "Drawn elsewhere, arriving nightly.",
+    mediaPool: ["toon-yugioh-opening-s1"],
     episodes: [
-      { title: "Ink Wanders", synopsis: "Animation with no meeting notes.", scenes: [
-        "A line is drawn. It refuses to become anything.",
-        "The soundtrack is a refrigerator with opinions.",
-        "This short was made by one person and a deadline.",
-        "The line finally becomes a bird. Worth the wait." ] }
+      { title: "Standby", synopsis: "Original globally inspired adventures hold the slot when sourced imports are unavailable.", scenes: [
+        "A stamped passport opens into a painted desert arena.",
+        "A card-shaped doorway flickers between two animated worlds." ] }
     ]
   },
   {
-    id: "toon-premiere-party", title: "Premiere Party", genre: "Cartoon Event", rating: "TV-Y7",
-    style: "game", palette: ["#E23B3B", "#F5B82E", "#111318"],
-    tagline: "New episodes, balloons, chaos.",
+    id: "toon-chrome-horizon", title: "Chrome Horizon", genre: "Anime-Inspired Science Fiction", rating: "TV-14",
+    style: "space", palette: ["#080D1F", "#4F7CFF", "#FF4F9A"],
+    tagline: "Steel cities, long shadows, and one signal from beyond the map.",
     episodes: [
-      { title: "Saturday Premiere", synopsis: "The big new-episode night.", scenes: [
-        "Balloons have been deployed. This is not a drill.",
-        "A brand new episode approaches the tube.",
-        "The confetti cannon is aimed at the schedule.",
-        "Premiere night: where the couch becomes front row." ] }
+      { title: "Standby", synopsis: "An original serialized space opera fills the late imported-animation hour.", scenes: [
+        "A silent carrier crosses the blue edge of a gas giant.",
+        "The cockpit receives a transmission dated twenty years ahead." ] }
+    ]
+  },
+  {
+    id: "toon-sleepwalk-studio", title: "Sleepwalk Studio", genre: "Surreal Animation", rating: "TV-14",
+    style: "latenight", palette: ["#15121C", "#7E9B76", "#D8C8A8"],
+    tagline: "Unsettling little films for televisions left on too late.",
+    episodes: [
+      { title: "Standby", synopsis: "Original dream logic and quiet unease occupy the deepest part of the night.", scenes: [
+        "A spoon taps once against an empty water tower.",
+        "The moon lowers a microphone toward a field of static." ] }
+    ]
+  },
+  {
+    id: "toon-weekend-matinee", title: "Weekend Matinee Machine", genre: "Animated Weekend Showcase", rating: "TV-Y7",
+    style: "movie", palette: ["#10243A", "#E2553D", "#F1D56B"],
+    tagline: "Longer rotations, bigger trouble, no school tomorrow.",
+    mediaPool: ["toon-poor-cinderella", "toon-minnie-the-moocher", "toon-balloon-land"],
+    episodes: [
+      { title: "Standby", synopsis: "A procedural animated feature takes over when the sourced matinee reel is unavailable.", scenes: [
+        "The projectionist discovers an extra reel marked Saturday.",
+        "A painted city unfolds across the auditorium curtains." ] }
+    ]
+  },
+  {
+    id: "toon-saturday-powerhouse", title: "Saturday Powerhouse", genre: "Weekend Action Animation", rating: "TV-Y7-FV",
+    style: "toon", palette: ["#0D1A2B", "#D63B32", "#F0BB3D"],
+    tagline: "Two hours of alarms, rivals, machines, and impossible entrances.",
+    mediaPool: ["toon-yugioh-opening-s1"],
+    episodes: [
+      { title: "Standby", synopsis: "Original tournament and superhero stories hold the weekend action block together.", scenes: [
+        "A stadium scoreboard wakes before the competitors arrive.",
+        "The city power grid draws a glowing challenge bracket." ] }
     ]
   },
 
