@@ -81,7 +81,7 @@
   // Deterministically resolve what footage (if any) a block airs:
   // explicit episode.media wins; otherwise rotate through the
   // show's mediaPool (active, channel-eligible records) weekly.
-  function resolveMedia(show, episode, block, chId, contentElapsed) {
+  function resolveMedia(show, episode, block, chId, seg) {
     if (episode && episode.media) return normalizeMedia(episode.media);
     if (!show.mediaPool || !show.mediaPool.length) return null;
     const pool = show.mediaPool
@@ -89,19 +89,22 @@
       .filter(m => m && m.active && eligible(m, chId));
     if (!pool.length) return null;
 
-    // Deterministic rotation so different blocks lead with a different clip.
+    // Rotate the clip order per content segment (seeded by the segment's start)
+    // so each ad break is followed by a fresh video, not a continuation of the
+    // interrupted one. Different blocks and weeks also lead differently.
+    const segSeed = seg ? Math.floor(seg.start) : 0;
     const week = Math.floor(block.start.getTime() / (7 * 24 * 3600 * 1000));
-    const rot = (hashStr(show.id + "|m|" + block.startMin) + week) % pool.length;
+    const rot = (hashStr(show.id + "|m|" + block.startMin + "|" + segSeed) + week) % pool.length;
     const ordered = pool.slice(rot).concat(pool.slice(0, rot));
 
-    // A block runs for hours but each clip is minutes. Sequence through the
-    // pool by elapsed content-seconds (wrapping) so the block keeps playing
-    // clip after clip instead of airing one video and going procedural.
-    // contentElapsed is derived from the clock, so all viewers land on the
-    // same clip at the same offset.
+    // Within this segment, sequence through the clips by time-into-segment
+    // (wrapping if the segment outlasts the pool), so a long uninterrupted
+    // stretch still rolls from clip to clip. contentElapsed is clock-derived,
+    // so all viewers land on the same clip at the same offset.
     const durOf = m => (m.duration && m.duration > 0) ? m.duration : 210;
     const total = ordered.reduce((s, m) => s + durOf(m), 0);
-    let t = total > 0 ? (((contentElapsed || 0) % total) + total) % total : 0;
+    const within = seg ? Math.max(0, seg.elapsed || 0) : 0;
+    let t = total > 0 ? (within % total) : 0;
     let pick = ordered[0], into = 0;
     for (const m of ordered) {
       const d = durOf(m);
@@ -298,14 +301,14 @@
       if (elapsed >= s.start) seg = s; else break;
     }
     const segElapsed = elapsed - seg.start;
-    const contentElapsed = (seg.contentBefore || 0) + (seg.type === "content" ? segElapsed : 0);
+    const contentSeg = { start: seg.start, elapsed: (seg.type === "content" ? segElapsed : 0) };
 
     return {
       now, block, next,
       channel, channelId: chId,
       show: timeline.show,
       episode: timeline.episode,
-      media: resolveMedia(timeline.show, timeline.episode, block, chId, contentElapsed),
+      media: resolveMedia(timeline.show, timeline.episode, block, chId, contentSeg),
       nextShow: getShow(next.showId),
       nextEpisode: pickEpisode(getShow(next.showId), next),
       seg, segElapsed,
