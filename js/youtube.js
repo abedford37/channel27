@@ -74,6 +74,7 @@
   function hide() { if (visible && wrap) { wrap.classList.remove("on"); visible = false; } }
 
   function destroyPlayer() {
+    hide();   // drop back to the procedural signal while rebuilding; never a black layer
     if (player) { try { player.destroy(); } catch (e) { /* fine */ } player = null; }
     currentKey = null; currentVideoId = null;
     if (wrap) {
@@ -110,7 +111,8 @@
       fbKey = media.key;
       currentVideoId = media.videoId;
       const start = Math.max(0, Math.floor(targetTime(media, elapsed)));
-      const params = "autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1&start=" + start;
+      const cc = captionsPref ? 1 : 0;
+      const params = "autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1&cc_load_policy=" + cc + "&start=" + start;
       fbIframe.src = "https://www.youtube-nocookie.com/embed/" + media.videoId + "?" + params;
     }
     show();
@@ -241,7 +243,8 @@
   function setCaptionsEnabled(v) {
     if (captionsPref === v) return;
     captionsPref = v;
-    if (player) destroyPlayer();
+    if (player) destroyPlayer();       // API player rebuilds with the new policy next sync
+    else if (fbIframe) fbKey = null;   // fallback embed reloads with the new cc param next sync
   }
 
   function getStatus() {

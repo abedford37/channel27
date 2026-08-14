@@ -12,10 +12,7 @@ Channel 27 itself is entirely original: the cartoons, the sitcoms, the game show
 
 The set is already warm when you arrive. Use the arrow keys or type a channel number to tune around. Channels 29 and 30 carry real, officially uploaded footage; the rest is original procedural animation.
 
-<!-- Optional hero image: capture a screenshot or GIF of the running station,
-     save it as docs/preview.png, and uncomment the two lines below.
 [![Channel 27 live station](docs/preview.png)](https://abedford37.github.io/channel27/)
--->
 
 ## The dial
 
