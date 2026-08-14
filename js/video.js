@@ -75,7 +75,10 @@
   function currentMedia(state) {
     const seg = state.seg;
     if (seg.type === "content" && state.media) {
-      return { media: state.media, elapsed: seg.contentBefore + state.segElapsed };
+      const elapsed = state.media.atSeconds != null
+        ? state.media.atSeconds                       // sequenced pool: exact offset into the current clip
+        : seg.contentBefore + state.segElapsed;       // single clip: time since content began
+      return { media: state.media, elapsed };
     }
     if (seg.type === "commercial" && seg.commercial.media) {
       const m = C27.scheduler.normalizeMedia(seg.commercial.media);

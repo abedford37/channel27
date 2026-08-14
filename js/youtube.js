@@ -26,6 +26,7 @@
   let mutedPref = true;
   let captionsPref = true;
   let endedKey = null;      // non-loop video finished for this key
+  let currentLoop = false;  // is the current clip a looping/sequenced pool clip
   let failCb = null;
   let lastError = null;
 
@@ -116,9 +117,14 @@
           const S = window.YT.PlayerState;
           if (e.data === S.PLAYING) show();
           if (e.data === S.ENDED) {
-            const media2 = { loop: false };
-            endedKey = currentKey;
-            hide();
+            if (currentLoop) {
+              // sequenced/looping clip: restart rather than go procedural;
+              // the next sync tick re-seeks (and swaps to the next clip)
+              try { e.target.seekTo(0, true); e.target.playVideo(); } catch (err) { /* fine */ }
+            } else {
+              endedKey = currentKey;
+              hide();
+            }
           }
         },
         onError: e => {
@@ -137,6 +143,7 @@
     opts = opts || {};
     failCb = opts.onFail || failCb;
     if (opts.muted !== undefined) setMuted(opts.muted);
+    currentLoop = !!media.loop;
 
     ensureWrap();
     if (apiState === "idle") loadAPI();
@@ -173,6 +180,8 @@
         const want = targetTime(media, elapsed);
         const have = player.getCurrentTime();
         if (Math.abs(have - want) > DRIFT_TOLERANCE) player.seekTo(want, true);
+      } else if (st === S.ENDED && media.loop) {
+        try { player.seekTo(targetTime(media, elapsed), true); player.playVideo(); } catch (e) { /* fine */ }
       } else if (st === S.PAUSED || st === S.CUED) {
         try { player.playVideo(); } catch (e) { /* autoplay policy; retry next tick */ }
       }
